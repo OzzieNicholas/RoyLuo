@@ -1,0 +1,134 @@
+{
+  "ver": "1.0.26",
+  "importer": "image",
+  "imported": true,
+  "uuid": "129464f6-d68d-4a76-960e-243dcc90790d",
+  "files": [
+    ".json",
+    ".png"
+  ],
+  "subMetas": {
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "129464f6-d68d-4a76-960e-243dcc90790d@6c48a",
+      "displayName": "米其林三星_12x",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "clamp-to-edge",
+        "wrapModeT": "clamp-to-edge",
+        "imageUuidOrDatabaseUri": "129464f6-d68d-4a76-960e-243dcc90790d",
+        "isUuid": true,
+        "visible": false,
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f9941": {
+      "importer": "sprite-frame",
+      "uuid": "129464f6-d68d-4a76-960e-243dcc90790d@f9941",
+      "displayName": "米其林三星_12x",
+      "id": "f9941",
+      "name": "spriteFrame",
+      "userData": {
+        "trimType": "auto",
+        "trimThreshold": 1,
+        "rotated": false,
+        "offsetX": 0.5,
+        "offsetY": 9,
+        "trimX": 27,
+        "trimY": 68,
+        "width": 407,
+        "height": 306,
+        "rawWidth": 460,
+        "rawHeight": 460,
+        "borderTop": 0,
+        "borderBottom": 0,
+        "borderLeft": 0,
+        "borderRight": 0,
+        "packable": true,
+        "pixelsToUnit": 100,
+        "pivotX": 0.5,
+        "pivotY": 0.5,
+        "meshType": 0,
+        "vertices": {
+          "rawPosition": [
+            -203.5,
+            -153,
+            0,
+            203.5,
+            -153,
+            0,
+            -203.5,
+            153,
+            0,
+            203.5,
+            153,
+            0
+          ],
+          "indexes": [
+            0,
+            1,
+            2,
+            2,
+            1,
+            3
+          ],
+          "uv": [
+            27,
+            392,
+            434,
+            392,
+            27,
+            86,
+            434,
+            86
+          ],
+          "nuv": [
+            0.058695652173913045,
+            0.18695652173913044,
+            0.9434782608695652,
+            0.18695652173913044,
+            0.058695652173913045,
+            0.8521739130434782,
+            0.9434782608695652,
+            0.8521739130434782
+          ],
+          "minPos": [
+            -203.5,
+            -153,
+            0
+          ],
+          "maxPos": [
+            203.5,
+            153,
+            0
+          ]
+        },
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "129464f6-d68d-4a76-960e-243dcc90790d@6c48a",
+        "atlasUuid": ""
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "type": "sprite-frame",
+    "hasAlpha": true,
+    "fixAlphaTransparencyArtifacts": false,
+    "redirect": "129464f6-d68d-4a76-960e-243dcc90790d@f9941"
+  }
+}

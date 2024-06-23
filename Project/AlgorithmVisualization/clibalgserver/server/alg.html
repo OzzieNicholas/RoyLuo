@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/layui/css/layui.css" media="all">
+  <link rel="stylesheet" href="/css/layx.min.css" media="all">
+  <link rel="stylesheet" href="/css/Chart.min.css" media="all">
+  <link rel="stylesheet" href="/css/element.css" media="all">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <style>
+    .layui-input-block {
+      padding-top: 8px;
+    }
+
+    body {
+      font-size: 17px;
+    }
+
+    .lab-file {
+      font-size: 15px;
+      padding: 10px 30px;
+      background-color: antiquewhite;
+      color: black;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .lab-file:hover {
+      background-color: aquamarine;
+      cursor: pointer;
+    }
+
+    #file-upload {
+      display: none;
+    }
+
+    .input {
+      width: 130px;
+      height: 25px;
+    }
+
+    .addItem {
+      height: 30px;
+      background-color: aliceblue;
+      color: #444;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      margin-left: 20px;
+      width: 150px;
+    }
+
+    .el-icon-plus {
+      color: #aaa;
+    }
+
+    .btn {
+      width: 50px;
+      height: 50px;
+      background-color: aliceblue;
+      font-size: 20px;
+      color: #aaa;
+      border: 1px solid #aaa;
+    }
+  </style>
+  <title>算法可视化</title>
+</head>
+
+<body>
+  <div id="app" style="background-color: white">
+    <div class="layui-row">
+      <div class="layui-col-sm16">
+        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+          <legend style="text-align: center; font-size: 25px; font-weight: 800; font-family: KaiTi">算法可视化</legend>
+        </fieldset>
+        <form class="layui-form" action="">
+          <div class="layui-form-item">
+            <el-menu style="margin-left: 110px; width: 88%; color: aliceblue;" :default-active=2 class="el-menu-demo"
+              mode="horizontal" background-color="#78cdd1" text-color="#130c0e" active-text-color="#817936">
+
+              <el-submenu index="4">
+                <template slot="title">测试用例</template>
+                <el-menu-item index="4-1"><a href="#" @click="test('test_var')">测试变量</a></el-menu-item>
+                <el-menu-item index="4-2"><a href="#" @click="test('test_1d')">测试一维数组</a></el-menu-item>
+                <el-menu-item index="4-3"><a href="#" @click="test('test_2d')">测试二维数组</a></el-menu-item>
+              </el-submenu>
+
+              <el-submenu index="5">
+                <template slot="title">排序算法</template>
+                <el-menu-item index="5-1"><a href="#" @click="test('sort/bubble')">冒泡排序</a></el-menu-item>
+                <el-menu-item index="5-2"><a href="#" @click="test('sort/insert')">插入排序</a></el-menu-item>
+                <el-menu-item index="5-3"><a href="#" @click="test('sort/selection')">选择排序</a></el-menu-item>
+                <el-menu-item index="5-4"><a href="#" @click="test('sort/quick')">快速排序</a></el-menu-item>
+                <el-menu-item index="5-5"><a href="#" @click="test('sort/merge')">归并排序</a></el-menu-item>
+                <el-menu-item index="5-6"><a href="#" @click="test('sort/shell')">希尔排序</a></el-menu-item>
+                <el-menu-item index="5-7"><a href="#" @click="test('sort/jishu')">基数排序</a></el-menu-item>
+                <el-menu-item index="5-8"><a href="#" @click="test('sort/dui')">堆排序</a></el-menu-item>
+              </el-submenu>
+
+              <el-submenu index="6">
+                <template slot="title">简单递归</template>
+                <el-menu-item index="6-1"><a href="#" @click="test('digui/jiecheng')">第N个阶乘</a></el-menu-item>
+                <el-menu-item index="6-2"><a href="#" @click="test('digui/houzhui')">后缀数组</a></el-menu-item>
+              </el-submenu>
+
+              <el-submenu index="7">
+                <template slot="title">贪心算法</template>
+                <el-menu-item index="7-1"><a href="#" @click="test('tanxin/diaodu')">调度问题</a></el-menu-item>
+                <el-menu-item index="7-2"><a href="#" @click="test('tanxin/wending')">稳定匹配问题</a></el-menu-item>
+                <el-menu-item index="7-3"><a href="#" @click="test('tanxin/duoshupiao')">博耶-摩尔的多数票</a></el-menu-item>
+              </el-submenu>
+
+              <el-submenu index="8">
+                <template slot="title">动态规划</template>
+                <el-menu-item index="8-1"><a href="#" @click="test('dp/lcs')">最长公共子序列</a></el-menu-item>
+                <el-menu-item index="8-2"><a href="#" @click="test('dp/edit')">背包问题</a></el-menu-item>
+                <el-menu-item index="8-3"><a href="#" @click="test('dp/choushu')">丑陋的数字</a></el-menu-item>
+                <el-menu-item index="8-4"><a href="#" @click="test('dp/feibo')">斐波那契数列</a></el-menu-item>
+                <el-menu-item index="8-5"><a href="#" @click="test('dp/huadong')">滑动窗口</a></el-menu-item>
+                <el-menu-item index="8-6"><a href="#" @click="test('dp/zichuan')">寻找子串</a></el-menu-item>
+                <el-menu-item index="8-7"><a href="#" @click="test('dp/gonggongzichuan')">寻找公共子串</a></el-menu-item>
+              </el-submenu>
+
+              <el-submenu index="9">
+                <template slot="title">回溯算法</template>
+                <el-menu-item index="9-1"><a href="#" @click="test('backtrace/n-queen')">N皇后</a></el-menu-item>
+                <el-menu-item index="9-1"><a href="#" @click="test('backtrace/xiangjie')">N皇后详解</a></el-menu-item>
+                <el-menu-item index="9-1"><a href="#" @click="test('backtrace/qishi')">骑士之旅问题</a></el-menu-item>
+              </el-submenu>
+
+              <el-submenu index="10">
+                <template slot="title">暴力算法</template>
+                <el-menu-item index="10-1"><a href="#" @click="test('baoli/sousuo')">暴力搜索</a></el-menu-item>
+                <el-menu-item index="10-2"><a href="#" @click="test('baoli/qiaoliang')">寻找桥梁</a></el-menu-item>
+                <el-menu-item index="10-3"><a href="#" @click="test('baoli/xunhuan')">循环排序</a></el-menu-item>
+              </el-submenu>
+
+              <el-submenu index="11">
+                <template slot="title">图相关算法</template>
+                <el-menu-item index="11-1"><a href="#" @click="test('graph/dfs')">深度优先搜索</a></el-menu-item>
+                <el-menu-item index="11-2"><a href="#" @click="test('graph/bfs')">广度优先搜索</a></el-menu-item>
+                <el-menu-item index="11-3"><a href="#" @click="test('graph/mst_prim')">Prim最小生成树</a></el-menu-item>
+                <el-menu-item index="11-4"><a href="#" @click="test('graph/Kruskal')">Kruskal最小生成树</a></el-menu-item>
+                <el-menu-item index="11-5"><a href="#" @click="test('graph/SPFA')">SPFA最短路径</a></el-menu-item>
+                <el-menu-item index="11-6"><a href="#" @click="test('graph/floya')">Floyd最短路径</a></el-menu-item>
+                <el-menu-item index="11-7"><a href="#" @click="test('graph/dijkstra')">Dijkstra最短路径</a></el-menu-item>
+                <el-menu-item index="11-8"><a href="#" @click="test('graph/Bellman-Ford')">Bellman-Ford最短路径</a>
+                </el-menu-item>
+                <el-menu-item index="11-9"><a href="#" @click="test('graph/hamidun')">哈密顿图</a></el-menu-item>
+                <el-menu-item index="11-10"><a href="#" @click="test('graph/sousuo')">A星搜寻算法</a></el-menu-item>
+                <el-menu-item index="11-10"><a href="#" @click="test('graph/zhongdian')">走到终点的方式</a></el-menu-item>
+                <el-menu-item index="11-12"><a href="#" @click="test('graph/liantong')">最小连通距离</a></el-menu-item>
+              </el-submenu>
+
+              <!-- 通过循环访问数组，获得每个栏目的名字与下标 -->
+              <!-- 并通过鼠标指针浮入事件来获得子栏目所属栏目的第一个下标 -->
+              <el-submenu v-for="(page, pageIndex) in pageList" :key="pageIndex" :index="pageIndex.toString()"
+                @mouseenter="handleSelectPageName(pageIndex)">
+                <!-- 双击栏目名触发编辑栏目名称的弹框显示 -->
+                <template slot="title">
+                  <span @mouseenter="handleSelectPageName(pageIndex)" @dblclick="editPageDialogVisible = true">
+                    {{ page }}</span></template>
+                <!-- 子栏目下拉框 -->
+                <!-- 通过循环访问数组，获得每个子栏目的名字与下标 -->
+                <!-- 子栏目通过二维数组存储，二维数组第一项为子栏目所属栏目的下标，第二项是子栏目在下拉框第几行 -->
+                <!-- 双击子栏目名触发编辑子栏目名称的弹框显示 -->
+                <ul>
+                  <li v-for="(subpage, subpageIndex) in subpageList[pageIndex]" :key="subpageIndex"
+                    :index="subpageIndex.toString()" @dblclick="editSubpageDialogVisible = true"
+                    @click="handleSelectSubpageName(pageIndex, subpageIndex)">
+                    <!-- <a :href="subpage.fileName">{{ subpage.name }}</a> -->
+                    <el-menu-item index="12-12"><a href="#" @click="doSomeThing(subpage.fileName)">{{ subpage.name }}</a>
+                    </el-menu-item>
+                  </li>
+                </ul>
+                <!-- 添加子栏目按钮 -->
+
+                <button @click="addSubpageDialogVisible = true" class="layui-btn">
+                  添加算法
+                </button>
+              </el-submenu>
+              <!-- 添加栏目按钮 -->
+              <el-menu-item index="" @click="addPageDialogVisible = true">
+                <i class="el-icon-circle-plus-outline"></i>
+              </el-menu-item>
+
+            </el-menu>
+          </div>
+          <div class="layui-form-item">
+            <div>
+              <div class="layui-input-inline" style="width: 54%; height:500px; margin-left: 110px;">
+                <div id="editor" style="width:100%; height:500px"></div>
+              </div>
+            </div>
+            <div>
+              <div class="layui-input-inline" style="width:31.5%; height:500px; margin-left: 30px;">
+                <textarea placeholder="输出结果" readonly class="layui-textarea" v-model="toutput" rows="24"></textarea>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <form class="input-form" method="post" enctype="multipart/form-data" action="http://localhost:8869/upload">
+          <button type="submit" class="layui-btn" @click="compile" onclick="return false;"
+            style="margin-left: 110px; margin-right: 15px;">发送</button>
+          <button type="reset" class="layui-btn" style="margin-right: 15px; background-color: rgba(0, 191, 255, 0.6)"><a
+              href="#" @click="reload">重置缓存</a></button>
+          <button type="reset" class="layui-btn layui-btn-warm" style="margin-right: 25px;">
+            <a href="/" style="font-size: 15px;">首页</a>
+          </button>
+          <!-- 请选择要上传的文件： -->
+          <!-- <label for="file-upload" class="lab-file">上传文件</label>
+          <input type="file" name="uploadfile" id="file-upload" />
+          <input type="submit" class="lab-file" value="上传" /> -->
+        </form>
+
+        <!-- <el-upload
+          class="upload-demo"
+          action="http://localhost:8869/upload"
+          headers="multipart/form-data">
+          <el-button size="small" type="primary">点击上传</el-button>
+        </el-upload> -->
+      </div>
+      <!-- 弹框部分 -->
+      <!-- 添加导航栏栏目弹框 -->
+      <el-dialog title="添加新的算法主题：" :visible.sync="addPageDialogVisible">
+        <input type="text" v-model="newPage" class="input" />
+        <button @click="addPage" class="addItem">添加算法主题</button>
+      </el-dialog>
+
+      <!-- 添加导航栏子栏目弹框 -->
+      <el-dialog title="添加新的算法：" :visible.sync="addSubpageDialogVisible">
+        <input type="text" v-model="newSubpage" class="input" />
+        <input type="file" ref="myFileName" class="addItem">
+        <button class="layui-btn" @click="addSubpage" class="addItem">添加算法</button>
+
+        
+        <!-- <input type="text" v-model="newSubpage" class="input" />
+        <label for="file-upload" class="lab-file">选择文件</label>
+        <input type="file" name="uploadfile" ref="myFileName" id="file-upload" />
+        <input type="button" @click="addSubpage" class="lab-file" value="添加算法" /> -->
+      </el-dialog>
+
+      <!-- 编辑栏目弹框 -->
+      <el-dialog title="修改或删除算法主题：" :visible.sync="editPageDialogVisible">
+        <input type="text" v-model="newPageName" style="height: 30px;" />
+        <button @click="() => changePageName()"  class="layui-btn">修改算法主题名称</button>
+        <button @click="delPage"  class="layui-btn">删除算法主题</button>
+      </el-dialog>
+
+      <!-- 编辑子栏目弹框 -->
+      <el-dialog title="修改或删除算法：" :visible.sync="editSubpageDialogVisible">
+        <input type="text" v-model="newSubpageName" />
+        <button @click="() => changeSubpageName()">修改算法名称</button>
+        <button @click="delSubpage">删除算法</button>
+      </el-dialog>
+    </div>
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript" src="js/vue.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/element.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/layx.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="ace/ace.js" charset="utf-8"></script>
+    <script type="text/javascript" src="ace/ext-language_tools.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/eventbus.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/Chart.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/chartjs-plugin-datalabels.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/go.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/alg.js" charset="utf-8"></script>
+</body>
+
+</html>

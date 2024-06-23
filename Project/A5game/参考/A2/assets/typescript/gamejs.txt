@@ -1,0 +1,13 @@
+// 打包之后请添加以下代码到game.js文件当中
+
+
+
+// 初始化onShowData
+tt.onShowData = {}; 
+
+if (typeof tt !== 'undefined' && tt.onShow) {
+    tt.onShow((res) => {
+        tt.onShowData = res;
+        console.log('游戏回到前台',tt.onShowData);
+    });
+}

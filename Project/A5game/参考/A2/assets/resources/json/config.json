@@ -1,0 +1,148 @@
+{
+
+  "damageValues": {
+    "0":15,
+    "1":10,
+    "2":15,
+    "3":10,
+    "4":10,
+    "5":15,
+    "6":10,
+    "7":15,
+    "8":10,
+    "9":15,
+    "10":15,
+    "11":15,
+    "12":10,
+    "13":10,
+    "14":10,
+    "15":10,
+    "16":15,
+    "17":10,
+    "18":10,
+    "19":10,
+    "20":10,
+    "21":10,
+    "22":15,
+    "23":10,
+    "24":10,
+    "25":15,
+    "26":10,
+    "27":15,
+    "28":10,
+    "29":10,
+    "30":15
+  },
+
+  "boss": {
+    "health": 100,
+    "level_two": {
+      "totalBosses": 5,
+      "bosses": [
+      {
+          "health": 550,
+          "image": "img/boss1/spriteFrame"
+        },
+        {
+          "health": 600,
+          "image": "img/boss1/spriteFrame"
+        },
+        {
+          "health": 650,
+          "image": "img/boss2/spriteFrame"
+        },
+        {
+          "health": 700,
+          "image": "img/boss2/spriteFrame"
+        },
+        {
+          "health": 2600,
+          "image": "img/boss3/spriteFrame"
+        }
+      ]
+    },
+    "image": "img/boss1/spriteFrame"
+    },
+    "time": 600,
+
+    "CardNum": 418,
+    "LevelNum": 30,
+    "TypeNum": 20,
+    "layers": [
+      {"index": 0, "sideLength": 200,"fi": 10,"pi": 3,"fi_types": 4,"aList": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]},
+      {"index": 1, "sideLength": 200,"fi": 10,"pi": 3,"fi_types": 4,"aList": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]},
+      {"index": 2, "sideLength": 200,"fi": 10,"pi": 3,"fi_types": 4,"aList": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]},
+      {"index": 3, "sideLength": 200,"fi": 10,"pi": 3,"fi_types": 4,"aList": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]},
+      {"index": 4, "sideLength": 200,"fi": 10,"pi": 3,"fi_types": 4,"aList": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]},
+      {"index": 5, "sideLength": 200,"fi": 10,"pi": 3,"fi_types": 4,"aList": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]},
+      {"index": 6, "sideLength": 200,"fi": 10,"pi": 3,"fi_types": 4,"aList": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]},
+      {"index": 7, "sideLength": 200,"fi": 10,"pi": 3,"fi_types": 4,"aList": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]},
+      {"index": 8, "sideLength": 250,"fi": 10,"pi": 3,"fi_types": 4,"aList": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]},
+      {"index": 9, "sideLength": 250,"fi": 10,"pi": 1,"fi_types": 4,"aList": [3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]},
+      {"index": 10, "sideLength": 250,"fi": 12,"pi": 1,"fi_types": 4,"aList": [3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]},
+      {"index": 11, "sideLength": 300,"fi": 12,"pi": 1,"fi_types": 3,"aList": [1,2,3,4,5,6,7,8,9,10]},
+      {"index": 12, "sideLength": 300,"fi": 12,"pi": 1,"fi_types": 3,"aList": [1,2,3,4,5,6,7,8,9,10]},
+      {"index": 13, "sideLength": 300,"fi": 12,"pi": 1,"fi_types": 3,"aList": [5,6,7,8,9,10,15,16,17]},
+      {"index": 14, "sideLength": 300,"fi": 12,"pi": 1,"fi_types": 3,"aList": [5,6,7,8,9,10,15,16,17]},
+      {"index": 15, "sideLength": 300,"fi": 12,"pi": 1,"fi_types": 3,"aList": [6,7,8,9,10,11,12,13,14,15,16,17]},
+      {"index": 16, "sideLength": 320,"fi": 16,"pi": 1,"fi_types": 3,"aList": [1,2,3,4,5,6,7,8,9,10]},
+      {"index": 17, "sideLength": 320,"fi": 16,"pi": 1,"fi_types": 4,"aList": [3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]},
+      {"index": 18, "sideLength": 360,"fi": 18,"pi": 1,"fi_types": 3,"aList": [1,2,3,4,5,6,7,8,9,10]},
+      {"index": 19, "sideLength": 360,"fi": 18,"pi": 0,"fi_types": 4,"aList": [3,4,5,6,7,8,9,10,11,12,13,14]},
+      {"index": 20, "sideLength": 400,"fi": 20,"pi": 0,"fi_types": 4,"aList": [3,4,5,6,7,8,9,10,11,12,13,14]},
+      {"index": 21, "sideLength": 400,"fi": 20,"pi": 0,"fi_types": 4,"aList": [5,6,7,8,9,10,11,12,13,14]},
+      {"index": 22, "sideLength": 420,"fi": 18,"pi": 0,"fi_types": 3,"aList": [5,6,7,8,9,10,11,12,13,14]},
+      {"index": 23, "sideLength": 420,"fi": 18,"pi": 0,"fi_types": 3,"aList": [5,6,7,8,9,10,11,12,13,14]},
+      {"index": 24, "sideLength": 450,"fi": 18,"pi": 0,"fi_types": 3,"aList": [5,6,7,8,9,10,11,12]},
+      {"index": 25, "sideLength": 450,"fi": 16,"pi": 0,"fi_types": 3,"aList": [5,6,7,8,9,10,11,12]},
+      {"index": 26, "sideLength": 480,"fi": 16,"pi": 0,"fi_types": 5,"aList": [5,6,7,8,9,10,11,12]},
+      {"index": 27, "sideLength": 480,"fi": 14,"pi": 0,"fi_types": 5,"aList": [5,6,7,8,10,11,12]},
+      {"index": 28, "sideLength": 500,"fi": 14,"pi": 0,"fi_types": 5,"aList": [5,6,7,8,10,11,12]},
+      {"index": 29, "sideLength": 500,"fi": 12,"pi": 0,"fi_types": 5,"aList": [5,6,7,8,10,11,12]},
+      {"index": 30, "sideLength": 500,"fi": 12,"pi": 0,"fi_types": 5,"aList": [5,6,7,8,10,11,12]}
+    ],
+
+    "cages": [
+            { "image": "img/longzi/spriteFrame", "position": { "x": -240, "y": 173 } },
+            { "image": "img/longzi/spriteFrame", "position": { "x": 232, "y": 173 } },
+            { "image": "img/longzi/spriteFrame", "position": { "x": -240, "y": -180 } },
+            { "image": "img/longzi/spriteFrame", "position": { "x": 232, "y": -180 } }
+         ],
+          "fixedCardPiles": [
+            { "pileId": "a","position": { "x": -240, "y": 163 }, "cards": 30 },
+            { "pileId": "b","position": { "x": 232, "y": 163 }, "cards": 30 },
+            { "pileId": "c","position": { "x": -240, "y": -190 }, "cards": 30 },
+            { "pileId": "d","position": { "x": 232, "y": -190 }, "cards": 30 }
+          ],
+
+    "arrNumDJ" : [3,3,3,3],
+
+    "achievements": [
+      {"id": "1", "name":"松鼠之友","description": "完成关卡的20%", "threshold": 20, "requiredSuccesses": 1},
+      {"id": "2", "name":"蹦跳白兔","description": "完成关卡的30%", "threshold": 30, "requiredSuccesses": 1},
+      {"id": "3", "name":"慵懒考拉","description": "完成关卡的35%", "threshold": 35, "requiredSuccesses": 1},
+      {"id": "4", "name":"摇摆企鹅","description": "完成关卡的40%", "threshold": 40, "requiredSuccesses": 1},
+      {"id": "5", "name":"粉粉小猪","description": "完成关卡的45%", "threshold": 45, "requiredSuccesses": 1},
+      {"id": "6", "name":"猫头鹰扬","description": "完成关卡的50%", "threshold": 50, "requiredSuccesses": 1},
+      {"id": "7", "name":"灵动浣熊","description": "完成关卡的55%", "threshold": 55, "requiredSuccesses": 1},
+      {"id": "8", "name":"梅花鹿魅","description": "完成关卡的60%", "threshold": 60, "requiredSuccesses": 1},
+      {"id": "9", "name":"灵巧猕猴","description": "完成关卡的65%", "threshold": 65, "requiredSuccesses": 1},
+      {"id": "10", "name":"机巧狐狸","description": "完成关卡的70%", "threshold": 70, "requiredSuccesses": 1},
+      {"id": "11", "name":"黑白斑马","description": "完成关卡的75%", "threshold": 75, "requiredSuccesses": 1},
+      {"id": "12", "name":"勤奋水牛","description": "完成关卡的80%", "threshold": 80, "requiredSuccesses": 1},
+      {"id": "13", "name":"大嘴河马","description": "完成关卡的85%", "threshold": 85, "requiredSuccesses": 1},
+      {"id": "14", "name":"草原犀牛","description": "完成关卡的90%", "threshold": 90, "requiredSuccesses": 1},
+      {"id": "15", "name":"大力棕熊","description": "完成关卡的93%", "threshold": 93, "requiredSuccesses": 1},
+      {"id": "16", "name":"猛虎下山","description": "完成关卡的96%", "threshold": 96, "requiredSuccesses": 1},
+      {"id": "17", "name":"象群之首","description": "完成关卡的98%", "threshold": 98, "requiredSuccesses": 1},
+      {"id": "18", "name":"霸气狮王","description": "完成关卡的100%", "threshold": 100, "requiredSuccesses": 1}
+      
+    ],
+
+    "lastBossDamagePhases" : [
+      { "attacks": 27, "healthPercentage": 70 },
+      { "attacks": 25, "healthPercentage": 20 },
+      { "attacks": 18, "healthPercentage": 10 }
+    ]
+
+  }

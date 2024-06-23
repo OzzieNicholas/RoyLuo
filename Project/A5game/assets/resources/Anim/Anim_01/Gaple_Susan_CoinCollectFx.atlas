@@ -1,0 +1,55 @@
+
+Gaple_Susan_CoinCollectFx.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+FX_ENDshine2
+  rotate: false
+  xy: 225, 2
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+Light_wave_blur
+  rotate: false
+  xy: 422, 90
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+Particle01
+  rotate: false
+  xy: 2, 33
+  size: 221, 221
+  orig: 221, 221
+  offset: 0, 0
+  index: -1
+Saberlight
+  rotate: false
+  xy: 225, 104
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+Saberlight2
+  rotate: false
+  xy: 377, 124
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+Snow_particles
+  rotate: false
+  xy: 2, 19
+  size: 8, 12
+  orig: 8, 12
+  offset: 0, 0
+  index: -1
+guang01
+  rotate: false
+  xy: 327, 9
+  size: 93, 93
+  orig: 93, 93
+  offset: 0, 0
+  index: -1

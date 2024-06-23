@@ -1,0 +1,134 @@
+{
+  "ver": "1.0.26",
+  "importer": "image",
+  "imported": true,
+  "uuid": "87dab7f9-5314-4a3f-bdec-5f42ba8b0a07",
+  "files": [
+    ".json",
+    ".png"
+  ],
+  "subMetas": {
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "87dab7f9-5314-4a3f-bdec-5f42ba8b0a07@6c48a",
+      "displayName": "地标餐厅_22x",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "clamp-to-edge",
+        "wrapModeT": "clamp-to-edge",
+        "imageUuidOrDatabaseUri": "87dab7f9-5314-4a3f-bdec-5f42ba8b0a07",
+        "isUuid": true,
+        "visible": false,
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f9941": {
+      "importer": "sprite-frame",
+      "uuid": "87dab7f9-5314-4a3f-bdec-5f42ba8b0a07@f9941",
+      "displayName": "地标餐厅_22x",
+      "id": "f9941",
+      "name": "spriteFrame",
+      "userData": {
+        "trimType": "auto",
+        "trimThreshold": 1,
+        "rotated": false,
+        "offsetX": 2,
+        "offsetY": -8,
+        "trimX": 36,
+        "trimY": 70,
+        "width": 392,
+        "height": 336,
+        "rawWidth": 460,
+        "rawHeight": 460,
+        "borderTop": 0,
+        "borderBottom": 0,
+        "borderLeft": 0,
+        "borderRight": 0,
+        "packable": true,
+        "pixelsToUnit": 100,
+        "pivotX": 0.5,
+        "pivotY": 0.5,
+        "meshType": 0,
+        "vertices": {
+          "rawPosition": [
+            -196,
+            -168,
+            0,
+            196,
+            -168,
+            0,
+            -196,
+            168,
+            0,
+            196,
+            168,
+            0
+          ],
+          "indexes": [
+            0,
+            1,
+            2,
+            2,
+            1,
+            3
+          ],
+          "uv": [
+            36,
+            390,
+            428,
+            390,
+            36,
+            54,
+            428,
+            54
+          ],
+          "nuv": [
+            0.0782608695652174,
+            0.11739130434782609,
+            0.9304347826086956,
+            0.11739130434782609,
+            0.0782608695652174,
+            0.8478260869565217,
+            0.9304347826086956,
+            0.8478260869565217
+          ],
+          "minPos": [
+            -196,
+            -168,
+            0
+          ],
+          "maxPos": [
+            196,
+            168,
+            0
+          ]
+        },
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "87dab7f9-5314-4a3f-bdec-5f42ba8b0a07@6c48a",
+        "atlasUuid": ""
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "type": "sprite-frame",
+    "hasAlpha": true,
+    "fixAlphaTransparencyArtifacts": false,
+    "redirect": "87dab7f9-5314-4a3f-bdec-5f42ba8b0a07@f9941"
+  }
+}

@@ -1,0 +1,1 @@
+刚下载A2到本地，需要先执行npm install crypto-js --save安装一个包
