@@ -146,7 +146,6 @@ export class Honor extends Component {
         if (typeof (this.wx) !== "undefined" && this.isWX) {
             this.wx.shareAppMessage({
                 title: this.imgtitles, // 分享内容的标题
-                //imageUrl: this.imgUrls // 分享的图片URL
             });
             // 确保call是一个函数再调用它
             if (typeof call === "function") {
@@ -157,7 +156,6 @@ export class Honor extends Component {
         if (typeof (this.tt) !== "undefined" && this.isTT) {
             window['tt'].shareAppMessage({
                 title: this.imgtitles, // 分享内容的标题
-                //imageUrl: this.imgUrls, // 分享的图片URL
                 success() {
                     console.log("抖音分享成功");
                     if (typeof call === "function") {

@@ -37,9 +37,6 @@ export class homepage extends Component {
         //设置星星数目
         let comp = this.star.getComponent(Label);
         comp.string = this.revenue + '';
-        // //随机出现动物的图片
-        // let randomIndex = Math.floor(Math.random() * this.animalImg.length);
-        // this.animalSprite.spriteFrame = this.animalImg[randomIndex];
         //ldx
         this.tt = window['tt']
         this.wx = window['wx']
@@ -112,7 +109,6 @@ export class homepage extends Component {
         this.animalSprite.spriteFrame = this.animalImg[randomIndex];
     }
     onTouchStart(event: EventTouch) {
-        //this.audioController.playclick();
         this.audioController.playClick();
     }
     // 处理声音和音乐设置的变化
@@ -205,6 +201,7 @@ export class homepage extends Component {
     on_honor_btn_click(event: Event, str: string) {
         this.audioController.playClick();
         director.loadScene('honor_scene');
+        //this.audioController.switchBackgroundMusic(this.audioController.bgmClip);
     }
     update(deltaTime: number) {
     }

@@ -18,6 +18,12 @@ export class game extends Component {
     @property([Prefab]) foodprefabls: Prefab[] = [];
     //顾客
     @property([Prefab]) customerprefabs: Prefab[] = [];
+    //边界
+    //@property(Node) borderleft: Node;
+    //@property(Node) borderright: Node;
+    //@property(Node) borderlbottom: Node;
+    //@property(Node) borderrbottom: Node;
+    //@property(Node) limittop: Node;
     //装游戏界面食物的节点
     @property(Node) foodsRoot: Node;
     //装点击食物的节点
@@ -427,7 +433,7 @@ export class game extends Component {
             return;
         }
         //时间减少
-        if (this.time > 0) { //修改bug: 确保时间不减少到负数
+        if (this.time > 0) {
             this.time--;
         }
         //更新显示
@@ -439,7 +445,7 @@ export class game extends Component {
         }
         else this.timer.getComponent(Label).string = hour + ':' + min;
         //判断游戏是否结束，时间是否到达
-        if (this.time < 0) {
+        if (this.time <= 0) {
             this.isPaused = true;
             //游戏结束逻辑
             //关闭物理引擎，使得不在运动,默认是开启的
@@ -492,6 +498,7 @@ export class game extends Component {
             .by(1, { position: new Vec3(720, 0, 0) })
             .call(() => {
                 //this.curcustomer.destroy();
+                this.updateData_newlevel();
             })
             .start();
         //新的乘客来到
@@ -501,9 +508,6 @@ export class game extends Component {
             //.by(1, {position:  new Vec3(720, 0, 0)})
             .by(1, { position: new Vec3(620, 0, 0) })
             .call(() => {
-                setTimeout(() => {
-                    this.updateData_newlevel(); //修改bug: 更新数据
-                }, 1500); // 延迟0.5秒，确保动画完成
             })
             .start();
         // 延迟0.5秒后金币归为
@@ -597,8 +601,6 @@ export class game extends Component {
             // 过一段时间隐藏过关面板，然后根据成就触发情况显示成就面板
             this.scheduleOnce(() => {
                 // 隐藏过关面板
-                //this.newdaynode.active = false;
-                //this.isPaused = false; // 恢复计时或其他活动
                 // 检查并处理成就
                 let achievementTriggered = this.checkAndHandleAchievements(currentDay, count);
                 if (achievementTriggered) {
@@ -734,8 +736,6 @@ export class game extends Component {
                 console.log("初始化微信广告")
                 this.wx.onShareAppMessage(() => {
                     return {
-                        //   title: title,
-                        //   imageUrl: imageUrl // 图片 URL
                     }
                 })
                 this.wx.showShareMenu({
@@ -765,7 +765,6 @@ export class game extends Component {
         });
     }
     start() {
-        //this.schedule(this.createFood, 1);
     }
     update(deltaTime: number) {
         //更新物理引擎
@@ -882,9 +881,6 @@ export class game extends Component {
                 let locpos = uitrans.convertToNodeSpaceAR(pos);
                 tableitem.position = locpos;
                 let itemindex = this.addfoodtableChild(tableitem);
-                //然后从点击的位置移动到table中相应位置，table中其他元素也相应移动
-                //创建本节点的动画
-                //获取终点的本地坐标
                 let endpos = new Vec3(45 + itemindex * 90, 0, 0);
                 tween(tableitem)
                     .to(0.2, { position: endpos })
@@ -953,7 +949,6 @@ export class game extends Component {
         for (let i = this.customerprefabs.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1)); // 生成一个随机索引
             [this.customerprefabs[i], this.customerprefabs[j]] = [this.customerprefabs[j], this.customerprefabs[i]]; // 交换元素位置
-            //[this.hungry[i], this.hungry[j]] = [this.hungry[j], this.hungry[i]]; // 交换元素位置
         }
     }
     //判断某节点是否在游戏界面中,position是以场景中心为原点的本地坐标
@@ -989,6 +984,8 @@ export class game extends Component {
                 tween(children[itemindex - 2])
                     .delay(0.2)
                     .to(0.2, { position: endpos })
+                    //动画结束后删除三个元素，右边的元素移到左边,执行更新操作
+                    //////////////////////////
                     .call(() => {
                         this.match3Successparticle.getComponent(ParticleSystem2D).resetSystem(); // 重置并播放粒子系统
                         //获取未删除前的table数组大小，避免同步时改变children数组大小
@@ -1077,7 +1074,6 @@ export class game extends Component {
                                 this.match3SuccessAudio.play();
                             }
                         }
-                        //巨坑
                         //再更新其他元素的位置，有可能因为点击频繁没有在最后的位置
                         //循环创建每个节点的动画
                         for (let i = 0; i < this.foodtable.children.length; i++) {
@@ -1093,8 +1089,6 @@ export class game extends Component {
                         //更新进度条
                         let progress = this.progressbar.getComponent(ProgressBar).progress;
                         progress = Number(this.hungry[this.curcustomerindex] - script.leftnum) / this.hungry[this.curcustomerindex];
-                        //增Liu
-                        //总填饱的进度
                         this.progressbar.getComponent(ProgressBar).progress = progress;
                         //更新气泡
                         let comp_bubble = this.bubble_mask.getComponent(UITransform);
@@ -1106,19 +1100,13 @@ export class game extends Component {
                         //更新表情，不是特殊食物时
                         if (progress >= 1 / 3 && progress < 2 / 3 && index < 22) {
                             this.emotionnode.getComponent(Sprite).spriteFrame = this.emotionSprites[Emotion.SEMI_FULL];
-                            //增Liu
-                            //this.curcustomer.getComponent(Sprite).spriteFrame = this.imageDictionary[`img${numericValue}_${2}`]
                         }
                         else if (progress >= 2 / 3 && index < 22) {
                             this.emotionnode.getComponent(Sprite).spriteFrame = this.emotionSprites[Emotion.FULL];
-                            //增Liu
-                            //this.curcustomer.getComponent(Sprite).spriteFrame = this.imageDictionary[`img${numericValue}_${3}`]
                         }
                         //特殊食物，特殊表情
                         else if (index >= 22) {
                             this.emotionnode.getComponent(Sprite).spriteFrame = this.emotionSprites[Emotion.SURPRISE];
-                            //增Liu
-                            //this.curcustomer.getComponent(Sprite).spriteFrame = this.imageDictionary[`img${numericValue}_${4}`]
                         }
                     })
                     .start();
@@ -1218,6 +1206,7 @@ export class game extends Component {
             this.checkAnddestroy(itemindex, index);
         }, this);
     }
+    //******************************************************************************************
     //按钮逻辑
     //移出按钮
     moveout_btn_onClick(event: EventTouch) {
@@ -1229,7 +1218,7 @@ export class game extends Component {
         let baseY = this.baseY;
         this.numDJ = 0
         //判断当前可用次数状态
-        //获取num节点
+        //获取num节点 
         let numnode = this.moveout.getChildByName('移出num');
         //获取string
         let num = numnode.getComponent(Label).string;
@@ -1243,6 +1232,8 @@ export class game extends Component {
         if (num == '1') {
             //消耗道具数量
             numnode.getComponent(Label).string = '+';
+            //this.shuaXinDJ();
+            /***************************************** */
             //获取foodtable的children数组
             let children = this.foodtable.children;
             //如果大小为0
@@ -1280,7 +1271,7 @@ export class game extends Component {
                     //移动到相应位置，动画
                     tween(child)
                         //.by(0.2, { position: new Vec3(450, 100, 0)})
-                        .by(0.2, { position: new Vec3(450, baseY, 0) }) // 修改bug
+                        .by(0.2, { position: new Vec3(450, baseY, 0) })
                         .start();
                     //为移出的节点添加点击监听事件，因为只会触发一次，所以用once
                     this.addoutfoodClickEvent(child);
@@ -1301,11 +1292,11 @@ export class game extends Component {
                     //移动到相应位置，动画
                     tween(child)
                         //.by(0.2, { position: new Vec3(450, 100, 0)})
-                        .by(0.2, { position: new Vec3(450, baseY, 0) }) // 修改bug
+                        .by(0.2, { position: new Vec3(450, baseY, 0) })
                         .start();
                     //为移出的节点添加点击监听事件，因为只会触发一次，所以用once
                     this.addoutfoodClickEvent(child);
-                    //this.movedChildren.push(child);
+                    //this.movedChildren.push(child); 
                 }
                 this.checkOverlap(this.movedChildren)
                 // 更新基础Y位置
@@ -1321,6 +1312,7 @@ export class game extends Component {
             }
             // 检查移出节点的重叠
             //this.checkOverlap(this.movedChildren);
+            /********************************************************* */
         }
     }
     //移出逻辑
@@ -1499,7 +1491,7 @@ export class game extends Component {
     }
     //移出工具的获取按钮逻辑
     moveout_get_Onclick(event: Event, str: string) {
-        //获取num节点
+        //获取num节点 
         let numnode = this.moveout.getChildByName('移出num');
         //接入广告获取逻辑
         //获取成功
@@ -1509,7 +1501,7 @@ export class game extends Component {
     }
     //销毁工具的获取按钮逻辑
     destroy_get_Onclick(event: Event, str: string) {
-        //获取num节点
+        //获取num节点 
         let numnode = this.destroynode.getChildByName('销毁num');
         //接入广告获取逻辑
         //获取成功
@@ -1519,7 +1511,7 @@ export class game extends Component {
     }
     //打乱工具的获取按钮逻辑
     disorganize_get_Onclick(event: Event, str: string) {
-        //获取num节点
+        //获取num节点 
         let numnode = this.disorganize.getChildByName('打乱num');
         //接入广告获取逻辑
         //获取成功
@@ -1727,6 +1719,8 @@ export class game extends Component {
         let param = {
             adUnitId: "从平台获取的广告id",  // 替换为从快手广告平台获取的实际广告ID
             multiton: false,                 // 启用多实例
+            //multitonRewardMsg: ['更多奖励1'],
+            //multitonRewardTimes: 1,
             progressTip: false
         };
         let rewardedVideoAd = ks.createRewardedVideoAd(param);
@@ -1852,6 +1846,8 @@ export class game extends Component {
             if (this.arrNumDJ[0] == 0 && this.arrLabelDJ[0].string == `+`) {
                 let b1 = this.moveout.getChildByName('移出btn').getComponent(Sprite)
                 b1.color = new Color(128, 128, 128)
+                // let b1_sprite = this.moveout.getChildByName('移出btn').getChildByName("Sprite").getComponent(Sprite);
+                // b1_sprite.color = new Color (128, 128, 128)
                 let btnComponent = this.moveout.getChildByName('移出btn').getComponent(Button);
                 // 设置按钮为不可点击
                 btnComponent.interactable = false;
@@ -1860,6 +1856,8 @@ export class game extends Component {
                 //let b2=this.node.getChildByName("btn_2").getComponent(Sprite)
                 let b2 = this.destroynode.getChildByName('销毁btn').getComponent(Sprite)
                 b2.color = new Color(128, 128, 128)
+                // let b2_sprite = this.destroynode.getChildByName('销毁btn').getChildByName("Sprite").getComponent(Sprite);
+                // b2_sprite.color = new Color (128, 128, 128)
                 let btnComponent = this.destroynode.getChildByName('销毁btn').getComponent(Button);
                 // 设置按钮为不可点击
                 btnComponent.interactable = false;
@@ -1867,6 +1865,8 @@ export class game extends Component {
             if (this.arrNumDJ[2] == 0 && this.arrLabelDJ[2].string == `+`) {
                 let b3 = this.disorganize.getChildByName('打乱btn').getComponent(Sprite)
                 b3.color = new Color(128, 128, 128)
+                // let b3_sprite = this.disorganize.getChildByName('打乱btn').getChildByName("Sprite").getComponent(Sprite);
+                // b3_sprite.color = new Color (128, 128, 128)
                 let btnComponent = this.disorganize.getChildByName('打乱btn').getComponent(Button);
                 // 设置按钮为不可点击
                 btnComponent.interactable = false;
@@ -2099,6 +2099,8 @@ export class game extends Component {
     //调试模式
     toggleDebugMode() {
         this.isDebugMode = !this.isDebugMode;
+        // this.isWX=!this.isWX
+        // this.isTT=!this.isTT
     }
     //初始化音频
     initAudioAndVibration() {

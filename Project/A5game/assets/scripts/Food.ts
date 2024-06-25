@@ -4,6 +4,7 @@ const { ccclass, property } = _decorator;
 export class Food extends Component {
     foodval: number = 0;
     start() {
+        //this.openClickEvent();
     }
     update(deltaTime: number) {
     }
