@@ -46,10 +46,6 @@ export class homepage extends Component {
         let comp = this.star.getComponent(Label);
         comp.string = this.revenue + '';
 
-        // //随机出现动物的图片
-        // let randomIndex = Math.floor(Math.random() * this.animalImg.length);
-        // this.animalSprite.spriteFrame = this.animalImg[randomIndex];
-
         //ldx
         this.tt = window['tt']
         this.wx=window['wx']
@@ -63,32 +59,6 @@ export class homepage extends Component {
             this.isWX = false;
         }
 
-        //需完善
-        // if (this.isTT){
-        //     const today = new Date().toISOString().slice(0, 10);
-        //     const lastRewardDate = sys.localStorage.getItem('lastRewardDate');
-
-        //     while (tt.onShowData == null) {
-        //     }
-        //     if (GameManager.instance.isReceiving || lastRewardDate === today || GameManager.instance.lingqu==false) {
-        //         console.log("已领取每日奖励");
-        //         this.sidebarButton.active = false;
-        //     }
-        //     else {
-        //         console.log("未领取每日奖励");
-        //         console.log(tt.onShowData)
-        //         this.sidebarButton.active = true;
-        //     }
-
-        //     console.log("进入主场景");
-        //     if (!GameManager.instance.isReceiving || lastRewardDate != today) {
-        //         // 如果还没领取就执行以下函数
-        //         this.sidebarFollow();
-        //     }
-
-        // }
-
-        //this.jiangli.active = false;
 
         // 初始化广告逻辑
         if (this.isWX) {

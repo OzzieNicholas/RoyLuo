@@ -84,18 +84,6 @@ export class Honor extends Component {
             })
         }
         
-        
-        // resources.load("json/config", JsonAsset, (err, asset: JsonAsset) => {
-        //     if (err) {
-        //         console.error("Failed to load config:", err);
-        //         return;
-        //     }
-
-        //     // 这里正确处理资源，确保资源加载完成后再使用
-        //     this.config = asset.json;  // 从加载的资源中获取 JSON 数据
-        //     console.log(this.config.achievements)
-            
-        // });
 
         this.config = await this.loadConfig();
         this.checkAndUnlockAchievements();

@@ -12,7 +12,6 @@ export class VibrationManager extends Component {
         if (VibrationManager.instance == null) {
             VibrationManager.instance = this;
             director.addPersistRootNode(this.node);
-            //game.addPersistRootNode(this.node); // 设置为持久节点，不随场景切换而销毁
         } else {
             this.node.destroy();
         }
