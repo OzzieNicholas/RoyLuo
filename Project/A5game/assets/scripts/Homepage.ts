@@ -2,15 +2,11 @@ import { _decorator, Component, director, EventTouch, find, JsonAsset, Label, No
 import { AudioController } from './AudioController';
 import { VibrationManager } from './VibrationManager';
 const { ccclass, property } = _decorator;
-
 declare var tt: any;
-
 @ccclass('homepage')
 export class homepage extends Component {
-
     //星星节点
     @property(Node) star: Node;
-
     @property(Node) public musicButton: Node = null;
     @property(Node) public soundButton: Node = null;
     @property(Sprite) vibrationButtonSprite: Sprite = null; // 震动按钮的Sprite组件引用
@@ -20,10 +16,8 @@ export class homepage extends Component {
     @property(Node) public maskLayer: Node = null; //遮罩
     @property([SpriteFrame]) animalImg: SpriteFrame[] = [];//动物的图片
     @property(Sprite) animalSprite: Sprite = null; //动物的组件
-
-    
     //存储总的营业额
-    revenue:number = 0;
+    revenue: number = 0;
     tt: any;
     wx: any;
     isWX: boolean;
@@ -33,75 +27,56 @@ export class homepage extends Component {
     vibrationFlag: boolean = true; // 震动功能是否开启的标志位，默认开启
     audioController: AudioController;
     config: any;
-
     protected async onLoad(): Promise<void> {
         this.config = await this.loadConfig();
         //第一次进入主页
-        if(!sys.localStorage.getItem('revenue'))
-        {
+        if (!sys.localStorage.getItem('revenue')) {
             sys.localStorage.setItem('revenue', 0);
         }
         this.revenue = parseInt(sys.localStorage.getItem('revenue'));
         //设置星星数目
         let comp = this.star.getComponent(Label);
         comp.string = this.revenue + '';
-
         //ldx
         this.tt = window['tt']
-        this.wx=window['wx']
-
+        this.wx = window['wx']
         if (sys.platform == sys.Platform.WECHAT_GAME) {
             this.isWX = true;
             this.isTT = false;
-
         } else if (sys.platform == sys.Platform.BYTEDANCE_MINI_GAME) {
             this.isTT = true;
             this.isWX = false;
         }
-
-
         // 初始化广告逻辑
         if (this.isWX) {
-
             const titles = this.config.sharetitles;
-        
             // 随机选择一个标题
             const title = titles[Math.floor(Math.random() * titles.length)];
-
             // 创建包含所有图片URLs的数组
             const imageUrls = this.config.shareimageUrls;
-        
             //随机选择一个图片URL
             const imageUrl = imageUrls[Math.floor(Math.random() * imageUrls.length)];
-
             this.wx.onShareAppMessage(() => {
                 return {
-                  title: title,
-                  imageUrl: imageUrl // 图片 URL
+                    title: title,
+                    imageUrl: imageUrl // 图片 URL
                 }
-              })
-
+            })
             this.wx.showShareMenu({
-            withShareTicket: true,
-            menus: ['shareAppMessage', 'shareTimeline']
+                withShareTicket: true,
+                menus: ['shareAppMessage', 'shareTimeline']
             })
         }
-
     }
-
-
     start() {
         this.musicButton.getComponent(Sprite).spriteFrame = this.OnSprite;
         this.soundButton.getComponent(Sprite).spriteFrame = this.OnSprite;
-
         const bgmNode = find('BGMNode');
         if (bgmNode) {
             this.audioController = bgmNode.getComponent(AudioController);
-
             // 从 AudioController 初始化状态
             this.musicFlag = this.audioController.musicIsOn;
             this.soundFlag = this.audioController.soundEffectsIsOn;
-
             if (this.soundFlag) {
                 this.soundButton.getComponent(Sprite).spriteFrame = this.OnSprite;
                 //关闭声音
@@ -109,7 +84,6 @@ export class homepage extends Component {
                 this.soundButton.getComponent(Sprite).spriteFrame = this.OffSprite;
                 //打开声音
             }
-
             if (this.musicFlag) {
                 this.musicButton.getComponent(Sprite).spriteFrame = this.OnSprite;
                 //关闭音乐
@@ -118,33 +92,25 @@ export class homepage extends Component {
                 //打开音乐
             }
         }
-
         // 初始化震动设置的状态
         if (VibrationManager.instance) {
             this.vibrationFlag = VibrationManager.instance.vibrationEnabled;
-
             if (this.vibrationFlag) {
                 this.vibrationButtonSprite.spriteFrame = this.OnSprite;
             } else {
                 this.vibrationButtonSprite.spriteFrame = this.OffSprite;
             }
-
         } else {
             console.error("VibrationManager not found");
         }
-
         this.node.on(Node.EventType.TOUCH_START, this.onTouchStart, this);
-
         //随机出现动物的图片
         let randomIndex = Math.floor(Math.random() * this.animalImg.length);
         this.animalSprite.spriteFrame = this.animalImg[randomIndex];
     }
-
     onTouchStart(event: EventTouch) {
-        //this.audioController.playclick();
         this.audioController.playClick();
     }
-
     // 处理声音和音乐设置的变化
     onSoundToggleChanged() {
         if (this.soundFlag) {
@@ -159,7 +125,6 @@ export class homepage extends Component {
             this.audioController.toggleSoundEffects(this.soundFlag);
         }
     }
-
     onMusicToggleChanged() {
         if (this.musicFlag) {
             this.musicButton.getComponent(Sprite).spriteFrame = this.OffSprite;
@@ -173,41 +138,33 @@ export class homepage extends Component {
             this.audioController.toggleBGM(this.musicFlag);
         }
     }
-
-     //音乐设置
+    //音乐设置
     //音乐设置的总按钮
     toggleSoundSetting() {
         this.soundSetting.active = true
         this.showMask(this.maskLayer);
     }
-
-
     //关闭设置
     close() {
         // 音乐设置节点的可见性
         this.soundSetting.active = false;
-        this.maskLayer.active =false;
+        this.maskLayer.active = false;
     }
-
     //震动按钮
     onVibrationButtonClicked() {
         if (VibrationManager.instance) {
             // 切换震动设置
             VibrationManager.instance.toggleVibration();
-
             // 获取更新后的震动设置
             this.vibrationFlag = VibrationManager.instance.vibrationEnabled;
-
             // 更新震动按钮的视觉状态
             if (this.vibrationFlag) {
                 this.vibrationButtonSprite.spriteFrame = this.OnSprite;
             } else {
                 this.vibrationButtonSprite.spriteFrame = this.OffSprite;
             }
-
         }
     }
-
     showMask(maskLayer: Node) {
         maskLayer.active = true;
         maskLayer.on(Node.EventType.TOUCH_START, (event: EventTouch) => {
@@ -223,11 +180,10 @@ export class homepage extends Component {
             event.propagationStopped = true
         }, this);
     }
-
     //读取配置文件
     async loadConfig(): Promise<any> {
         return new Promise((resolve, reject) => {
-            resources.load("json/config", JsonAsset, (err, asset:JsonAsset) => {
+            resources.load("json/config", JsonAsset, (err, asset: JsonAsset) => {
                 if (err) {
                     console.error("Failed to load config:", err);
                     reject(err);
@@ -237,24 +193,16 @@ export class homepage extends Component {
             });
         });
     }
-
-    onstart_btn(event: Event, str: string)
-    {
+    onstart_btn(event: Event, str: string) {
         this.audioController.playClick();
         director.loadScene('game_scene');
         this.audioController.switchBackgroundMusic(this.audioController.gameBGM);
     }
-
-    on_honor_btn_click(event: Event, str: string)
-    {   this.audioController.playClick();
+    on_honor_btn_click(event: Event, str: string) {
+        this.audioController.playClick();
         director.loadScene('honor_scene');
         //this.audioController.switchBackgroundMusic(this.audioController.bgmClip);
     }
-
     update(deltaTime: number) {
-        
     }
-
 }
-
-

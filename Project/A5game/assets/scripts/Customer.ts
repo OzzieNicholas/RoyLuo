@@ -1,4 +1,4 @@
-import { _decorator, Component, Node ,Event} from 'cc';
+import { _decorator, Component, Node, Event } from 'cc';
 const { ccclass, property } = _decorator;
 @ccclass('Customer')
 export class Customer extends Component {
@@ -16,7 +16,7 @@ export class Customer extends Component {
         this.node.setPosition(this.node.position.x + 100, this.node.position.y);
     }
     Eventtrigger() {
-            this.node.dispatchEvent(new Event('event',true));
+        this.node.dispatchEvent(new Event('event', true));
     }
     update(deltaTime: number) {
         if (this.leftnum == 0) {
