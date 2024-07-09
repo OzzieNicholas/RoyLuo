@@ -158,7 +158,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 800, 26));
+        menuBar->setGeometry(QRect(0, 0, 800, 23));
         menuBar->setStyleSheet(QString::fromUtf8(""));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
@@ -175,11 +175,9 @@ public:
         mainToolBar->addAction(action_circle);
         mainToolBar->addAction(action_ellipse);
         mainToolBar->addAction(action_polygon);
-        mainToolBar->addAction(action_curve);
         mainToolBar->addSeparator();
         mainToolBar->addAction(action_translate);
         mainToolBar->addAction(action_rotate);
-        mainToolBar->addAction(action_clip);
         mainToolBar->addAction(action_zoomin);
         mainToolBar->addAction(action_zoomout);
         mainToolBar->addSeparator();
@@ -197,25 +195,25 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Paint", nullptr));
-        action_line->setText(QCoreApplication::translate("MainWindow", "\347\233\264\347\272\277", nullptr));
-        action_triangle->setText(QCoreApplication::translate("MainWindow", "\344\270\211\350\247\222\345\275\242", nullptr));
-        action_rectangle->setText(QCoreApplication::translate("MainWindow", "\347\237\251\345\275\242", nullptr));
-        action_circle->setText(QCoreApplication::translate("MainWindow", "\345\234\206", nullptr));
-        action_ellipse->setText(QCoreApplication::translate("MainWindow", "\346\244\255\345\234\206", nullptr));
-        action_polygon->setText(QCoreApplication::translate("MainWindow", "\345\244\232\350\276\271\345\275\242", nullptr));
-        action_palette->setText(QCoreApplication::translate("MainWindow", "\350\260\203\350\211\262\346\235\277", nullptr));
-        action_translate->setText(QCoreApplication::translate("MainWindow", "\347\247\273\345\212\250", nullptr));
-        action_trash->setText(QCoreApplication::translate("MainWindow", "\345\210\240\351\231\244", nullptr));
-        action_rotate->setText(QCoreApplication::translate("MainWindow", "\346\227\213\350\275\254", nullptr));
-        action_zoomin->setText(QCoreApplication::translate("MainWindow", "\346\224\276\345\244\247", nullptr));
-        action_zoomout->setText(QCoreApplication::translate("MainWindow", "\347\274\251\345\260\217", nullptr));
-        action_save->setText(QCoreApplication::translate("MainWindow", "\344\277\235\345\255\230", nullptr));
-        action_open->setText(QCoreApplication::translate("MainWindow", "\346\211\223\345\274\200", nullptr));
-        action_clip->setText(QCoreApplication::translate("MainWindow", "\350\243\201\345\211\252", nullptr));
+        action_line->setText(QCoreApplication::translate("MainWindow", "Line", nullptr));
+        action_triangle->setText(QCoreApplication::translate("MainWindow", "Triangle", nullptr));
+        action_rectangle->setText(QCoreApplication::translate("MainWindow", "Rectangle", nullptr));
+        action_circle->setText(QCoreApplication::translate("MainWindow", "Circle", nullptr));
+        action_ellipse->setText(QCoreApplication::translate("MainWindow", "ellipse", nullptr));
+        action_polygon->setText(QCoreApplication::translate("MainWindow", "Polygon", nullptr));
+        action_palette->setText(QCoreApplication::translate("MainWindow", "Palette", nullptr));
+        action_translate->setText(QCoreApplication::translate("MainWindow", "Translate", nullptr));
+        action_trash->setText(QCoreApplication::translate("MainWindow", "Delete", nullptr));
+        action_rotate->setText(QCoreApplication::translate("MainWindow", "Rotate", nullptr));
+        action_zoomin->setText(QCoreApplication::translate("MainWindow", "ZoomIn", nullptr));
+        action_zoomout->setText(QCoreApplication::translate("MainWindow", "ZoomOut", nullptr));
+        action_save->setText(QCoreApplication::translate("MainWindow", "Save", nullptr));
+        action_open->setText(QCoreApplication::translate("MainWindow", "Open", nullptr));
+        action_clip->setText(QCoreApplication::translate("MainWindow", "Clip", nullptr));
         action_curve->setText(QCoreApplication::translate("MainWindow", "\346\233\262\347\272\277", nullptr));
-        action_addpoint->setText(QCoreApplication::translate("MainWindow", "\345\212\240\347\262\227", nullptr));
-        action_deletepoint->setText(QCoreApplication::translate("MainWindow", "\345\207\217\347\273\206", nullptr));
-        action_help->setText(QCoreApplication::translate("MainWindow", "\345\270\256\345\212\251", nullptr));
+        action_addpoint->setText(QCoreApplication::translate("MainWindow", "Thicken", nullptr));
+        action_deletepoint->setText(QCoreApplication::translate("MainWindow", "Attenuation", nullptr));
+        action_help->setText(QCoreApplication::translate("MainWindow", "Help", nullptr));
         label->setText(QString());
     } // retranslateUi
 
