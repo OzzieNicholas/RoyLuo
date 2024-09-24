@@ -1,0 +1,12 @@
+<div class="app-view-project-analyze ng-cloak">
+    <ul class="nav nav-tabs" ng-if="!$root.User.data.groupmode">
+        <!--<li ng-if="$root.User.data.groupmode" class="active"><a data-toggle="tab" href="#group">集团项目</a></li>-->
+        <li class="active"><a data-toggle="tab" href="#building">建筑</a></li>
+        <li><a data-toggle="tab" href="#socities">社会属性</a></li>
+    </ul>
+    <div class="tab-content">
+        <analyze-group ng-if="$root.User.data.groupmode" id="group" class="tab-pane clearfix active"></analyze-group>
+        <analyze-building ng-if="!$root.User.data.groupmode" id="building" class="tab-pane clearfix active"></analyze-building>
+        <analyze-socities ng-if="!$root.User.data.groupmode" id="socities" class="tab-pane clearfix"></analyze-socities>
+    </div>
+</div>

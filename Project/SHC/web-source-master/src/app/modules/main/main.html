@@ -1,0 +1,46 @@
+<div class="app-view-project-main ng-cloak">
+
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="row">
+                <div class="panel-heading"><span class="subTitle">能耗日历</span></div>
+                <div class="panel-body">
+                    <div class="subContent clearfix">
+                        <div class="col-sm-5">
+                            <main-calendar groupmode="$root.User.data.groupmode" select-day="$ctrl.selectDay" select-month="$ctrl.selectMonth"></main-calendar>
+                        </div>
+                        <div class="col-sm-7">
+                            <main-dailycost groupmode="$root.User.data.groupmode" select-day="$ctrl.selectDay"></main-dailycost>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-5 content-right">
+            <div class="row">
+                <div class="panel-heading"><span class="subTitle">总能耗</span></div>
+                <div class="panel-body">
+                    <div class="subContent clearfix">
+                        <main-monthlykgce groupmode="$root.User.data.groupmode" select-month="$ctrl.selectMonth"></main-monthlykgce>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="rate-content clearfix">
+        <div ng-if="!$root.User.data.groupmode" class="col-sm-7">
+            <main-energyconstitute select-month="$ctrl.selectMonth"></main-energyconstitute>
+        </div>
+        <div ng-if="!$root.User.data.groupmode" class="col-sm-5 content-right">
+            <main-dailysensordetail select-month="$ctrl.selectMonth"></main-dailysensordetail>
+        </div>
+        <div ng-if="$root.User.data.groupmode" class="col-sm-7">
+            <main-energyeffectiverate groupmode="$root.User.data.groupmode" select-month="$ctrl.selectMonth"></main-energyeffectiverate>
+        </div>
+        <div ng-if="$root.User.data.groupmode" class="col-sm-5 content-right">
+            <main-projectdetail select-month="$ctrl.selectMonth"></main-projectdetail>
+        </div>
+    </div>
+
+</div>

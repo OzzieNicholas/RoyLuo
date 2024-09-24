@@ -1,0 +1,53 @@
+<div class="app-view-dashboard">
+    <nav class="navbar navbar-default">
+        <div class="pull-left" ng-bind="$root.siteTitle"></div>
+        <div class="pull-right">
+            <div class="btn-group">
+                <span>
+                    <i class="emweb web-clock"></i>
+                    <span ng-bind="$ctrl.timeStr"></span>
+                </span>
+            </div>
+            <!-- <div class="btn-group" ng-if="$root.Project.length && $root.User.data.groupmode"> -->
+            <div class="btn-group" ng-show="$root.Project.ids.length>1">
+                <a href="javascript:void(0)" class="btn btn-primary dropdown-toggle" ng-click="showmenu=!showmenu">
+                    集团项目
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" ng-class="{'ng-display':showmenu}">
+                    <li ng-repeat="item in $root.Project">
+                        <a target="_blank" ui-sref="dashboard.main({projectid:item._id})" ng-bind="item.title"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="btn-group">
+                <a class="btn btn-primary" target="_blank" href="http://sighttp.qq.com/authd?IDKEY=c7520bcf5154b71353e5f9bbcc742e8f37dab53dc23d63c5">
+                    <i class="emweb web-QQ"></i>
+                    <small>QQ客服</small>
+                </a>
+            </div>
+            <div class="btn-group">
+                <a class="btn btn-primary" ng-href="{{$ctrl.adminLink}}">
+                    <i class="emweb web-user"></i>
+                    <span ng-bind="$root.Account.title||$root.Account._id"></span>
+                </a>
+            </div>
+            <div class="btn-group">
+                <a class="btn btn-primary" ng-click="$ctrl.logout()">
+                    <i class="emweb web-exit"></i>
+                    <small>退出</small>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="view-sidebar">
+        <ul class="nav">
+            <li ng-repeat="item in $root.menuData" ng-class="item|menuActiveClass">
+                <a ui-sref="{{item.state}}" title="{{item.name}}">
+                    <i ng-class="item.icon"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="view-content" ui-view></div>
+</div>

@@ -1,0 +1,296 @@
+/*dashboard模板样式*/
+
+.app-view-dashboard {
+    min-width: 800px;
+    a.btn:focus,
+    a.btn:link {
+        outline: none;
+    }
+    .navbar.navbar-default {
+        margin-bottom: 0;
+        border-radius: 0;
+        border-color: #37bc9b;
+        background-color: #37bc9b;
+        &,
+        &>div {
+            height: 50px;
+            min-height: 50px;
+            line-height: 50px;
+            font-size: 20px;
+            color: #FFF;
+        }
+        .pull-left {
+            padding-left: 15px;
+            font-size: 24px;
+            font-weight: 500;
+        }
+        .pull-right {
+            .btn-group {
+                float: left;
+                height: 100%;
+                &>.btn,
+                &>span {
+                    float: left;
+                    height: 100%;
+                    line-height: 30px;
+                    padding: 10px 15px;
+                    vertical-align: top;
+                    border-radius: 0;
+                    font-size: 18px;
+                }
+            }
+            .dropdown-menu {
+                max-height: 300px;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.35);
+                overflow: auto;
+                a:hover {
+                    background-color: #37bc9b;
+                    color: #FFF;
+                }
+            }
+        }
+        .emweb {
+            font-size: 20px;
+        }
+    }
+    .view-sidebar {
+        position: fixed;
+        z-index: 2;
+        left: 0;
+        top: 50px;
+        bottom: 0;
+        width: 90px;
+        background-color: #2b3a4d;
+        .nav li {
+            padding: 15px 0 0 15px;
+        }
+        i {
+            line-height: 30px;
+            font-size: 30px;
+        }
+        a {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 70px;
+            padding: 10px;
+            border-radius: 5px 0 0 5px;
+            color: #F5F5F5;
+            text-align: center;
+        }
+        a:before {
+            position: absolute;
+            left: 0;
+            top: 40px;
+            width: 100%;
+            content: attr(title);
+        }
+        a:focus,
+        a:link {
+            outline: none;
+        }
+        a:hover,
+        .active a {
+            background-color: #F5F5F5;
+            color: #2b3a4d;
+        }
+    }
+    .view-content {
+        position: absolute;
+        left: 90px;
+        top: 50px;
+        right: 0;
+        bottom: 0;
+        padding: 15px;
+        overflow-y: auto;
+        overflow-x: hidden; // &> div[class*=app-view-project] {
+        //     min-height: 100%;
+        // }
+    }
+    .flex {
+        display: flex;
+        flex-direction: row;
+        .flex-tab-left {
+            flex: 1 1 auto;
+        }
+        .flex-tab-right {
+            flex: 0 1 auto;
+            width: 0;
+            transition: width 0.35s ease-in-out;
+        }
+    }
+    .w80 {
+        width: 80%!important;
+    }
+    .w200px {
+        width: 200px!important;
+    }
+    .subTitle {
+        border-left: 4px solid #16bbc1;
+        padding-left: 8px;
+        font-size: 16px;
+    }
+    .subContent {
+        background-color: #FFF;
+    }
+    .row>.panel-heading+.panel-body {
+        padding-top: 0;
+    }
+    .btn-group-vertical>.btn,
+    .btn-group>.btn {
+        position: static;
+    }
+    /* datetimepicker - start */
+    .bootstrap-datetimepicker-widget {
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+        table thead tr:first-child th:hover,
+        table td.day:hover,
+        table td.hour:hover,
+        table td.minute:hover,
+        table td.second:hover {
+            background-color: rgba(0, 0, 0, 0.06);
+        }
+        table td.active:hover {
+            background-color: #337ab7;
+        }
+    }
+    .bootstrap-datetimepicker-widget.dropdown-menu {
+        border-radius: 4px;
+    }
+    .bootstrap-datetimepicker-widget.dropdown-menu.bottom:before,
+    .bootstrap-datetimepicker-widget.dropdown-menu.bottom:after {
+        border-bottom-color: #edeff1;
+    }
+    .bootstrap-datetimepicker-widget.dropdown-menu.top:before,
+    .bootstrap-datetimepicker-widget.dropdown-menu.top:after {
+        border-top-color: #edeff1;
+    }
+    .form-group {
+        .bootstrap-datetimepicker-widget.dropdown-menu.pull-right:before {
+            right: 10px;
+        }
+        .bootstrap-datetimepicker-widget.dropdown-menu.pull-right:after {
+            right: 11px;
+        }
+    }
+    .date.has-feedback>.form-control-feedback {
+        top: 2px;
+        right: 2px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        margin: 0;
+        padding: 0;
+        font-size: 18px;
+    }
+    .date.focus>.form-control-feedback {
+        color: #1abc9c;
+    }
+    /* datetimepicker - end */
+    /* highcharts - start */
+    .highcharts-component {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .highcharts-panel {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        .pieTitle {
+            font-size: 12px;
+            color: #bcbcbc;
+            text-align: center;
+        }
+        .pieNumber {
+            font-size: 30px;
+            color: #16bbbf;
+            text-align: center;
+        }
+        .pieUnit {
+            font-size: 12px;
+            color: #9ee3e9;
+            text-align: center;
+        }
+    }
+    .highcharts-pie {
+        min-height: 270px;
+    }
+    .highcharts-line {
+        min-height: 320px;
+        padding-right: 10px;
+    }
+    /* highcharts - end */
+    /* flat-ui - btn-primary */
+    .btn-primary.active.focus,
+    .btn-primary.active:focus,
+    .btn-primary.active:hover,
+    .btn-primary.focus:active,
+    .btn-primary:active:focus,
+    .btn-primary:active:hover,
+    .open>.dropdown-toggle.btn-primary.focus,
+    .open>.dropdown-toggle.btn-primary:focus,
+    .open>.dropdown-toggle.btn-primary:hover {
+        border-color: #16a085;
+        background-color: #16a085;
+    }
+    /* flat-ui - btn-primary */
+    /* flat-ui - btn-info */
+    .btn-info.active.focus,
+    .btn-info.active:focus,
+    .btn-info.active:hover,
+    .btn-info.focus:active,
+    .btn-info:active:focus,
+    .btn-info:active:hover {
+        border-color: #2c81ba;
+        background-color: #2c81ba;
+    }
+    /* flat-ui - btn-info */
+    /* flat-ui - bootstrap-switch */
+    //info
+    .bootstrap-switch-info~.bootstrap-switch-handle-off:before,
+    .bootstrap-switch-off .bootstrap-switch-handle-on~.bootstrap-switch-info.bootstrap-switch-handle-off:before {
+        background-color: #2980b9;
+    } //success
+    .bootstrap-switch-success~.bootstrap-switch-handle-off:before,
+    .bootstrap-switch-off .bootstrap-switch-handle-on~.bootstrap-switch-success.bootstrap-switch-handle-off:before {
+        background-color: #27ae60;
+    } //warning
+    .bootstrap-switch-warning~.bootstrap-switch-handle-off:before,
+    .bootstrap-switch-off .bootstrap-switch-handle-on~.bootstrap-switch-warning.bootstrap-switch-handle-off:before {
+        background-color: #f39c12;
+    } //danger
+    .bootstrap-switch-danger~.bootstrap-switch-handle-off:before,
+    .bootstrap-switch-off .bootstrap-switch-handle-on~.bootstrap-switch-danger.bootstrap-switch-handle-off:before {
+        background-color: #c0392b;
+    }
+    /* flat-ui - bootstrap-switch */
+    /* ui-grid - start */
+    .ui-grid-column-menu-button-last-col {
+        margin-right: 0;
+    }
+    /* ui-grid - end */
+    //treeList slide
+    .right-side {
+        position: absolute;
+        z-index: 10;
+        width: 300px;
+        right: -300px;
+        border: 1px solid #DDD;
+        border-right-width: 0;
+        margin-right: -15px;
+        padding: 5px;
+        border-radius: 3px 0 0 3px;
+        background-color: #EEE;
+        &>button {
+            white-space: normal;
+            position: absolute;
+            top: 40px;
+            left: -22px;
+            padding: 6px 0 6px 0;
+            width: 22px;
+            border-radius: 2px;
+            background-color: rgba(72, 201, 176, 0.8);
+            font-size: 14px;
+        }
+    }
+}

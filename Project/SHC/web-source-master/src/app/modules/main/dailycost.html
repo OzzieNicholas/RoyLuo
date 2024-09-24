@@ -1,0 +1,26 @@
+<div class="row highcharts-component">
+    <div class="highcharts-today text-center text-danger text-success">
+        {{$ctrl.showDay}}
+    </div>
+    <highcharts class="highcharts-panel text-center" options="$ctrl.dailycost"></highcharts>
+    <div class="highcharts-comment row text-center">
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="unitAreaTitle">环比费用</div>
+                <div class="unitAreaCounting" ng-class="{'text-danger': $ctrl.qoqPercent>0,'text-success':$ctrl.qoqPercent<0}">
+                    <b ng-show=" $ctrl.qoqPercent > 0">+</b> {{$ctrl.qoqPercent}}
+                    <span class="unitAreaUnit">%</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="unitAreaTitle">同比费用</div>
+                <div class="unitAreaCounting" ng-class="{'text-danger': $ctrl.yoyPercent>0,'text-success':$ctrl.yoyPercent<0}">
+                    <span ng-show="$ctrl.yoyPercent > 0">+</span> {{$ctrl.yoyPercent}}
+                    <span class="unitAreaUnit">%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

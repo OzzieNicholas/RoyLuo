@@ -1,0 +1,170 @@
+<div class="row">
+    <div class="col-sm-4">
+        <div class="row">
+            <div class="panel-heading"><span class="subTitle">社会属性能耗收入</span></div>
+            <div class="panel-body">
+                <div class="subContent text-center">
+                    <div class="panel-heading btn-group">
+                        <a class="btn btn-primary" ng-repeat="(key,val) in $ctrl.timetype" ng-class="{active:$ctrl.timetype_current===key}" ng-click="$ctrl.timetypeChange(key)" ng-bind="val"></a>
+                    </div>
+                    <div class="panel-body">
+                        <div class="first-list relative overflow-hidden nowrap" perfect-scrollbar="$ctrl.socityData.length">
+                            <div class="media" ng-repeat="item in $ctrl.socityData" ng-click="$ctrl.socity(item.socityid)">
+                                <div class="media-left badge" ng-class="{'badge-primary':$ctrl.socity_current===item.socityid||$ctrl.socity_current===''}" ng-bind="item.consumption.toFixed(0)+'kWh'"></div>
+                                <div class="media-body">
+                                    <div ng-bind="item.name"></div>
+                                </div>
+                                <div class="media-right media-middle" ng-bind="'¥'+item.cost.toFixed(0)"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-8 content-right">
+        <div class="row">
+            <div class="panel-heading"><span class="subTitle">能耗收入比</span></div>
+            <div class="panel-body">
+                <div class="subContent clearfix">
+                    <div class="row second-chart">
+                        <div class="col-sm-4">
+                            <div class="col-sm-6">
+                                <highcharts class="highcharts-panel text-center" options="$ctrl.chart.nowyoy"></highcharts>
+                            </div>
+                            <div class="col-sm-6 pt10" ng-if="$ctrl.pie.nowyoy">
+                                <div class="consumptionPerAreaPrime">
+                                    {{$ctrl.pie.nowyoy.now.toFixed(0)}} KWh
+                                </div>
+                                <div class="consumptionPerAreaSub">
+                                    总能耗
+                                </div>
+                                <div class="seprator"></div>
+                                <div class="incomeTargetPeriodPrime">
+                                    {{$ctrl.pie.nowyoy.yoy.toFixed(0)}} kWh
+                                </div>
+                                <div class="incomeTargetPeriodSub">
+                                    同期能耗
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="col-sm-6">
+                                <highcharts class="highcharts-panel text-center" options="$ctrl.chart.electric"></highcharts>
+                            </div>
+                            <div class="col-sm-6 pt10" ng-if="$ctrl.pie.electric">
+                                <div class="consumptionPerAreaPrime">
+                                    {{$ctrl.pie.electric.now.toFixed(0)}} KWh
+                                </div>
+                                <div class="consumptionPerAreaSub">
+                                    电总能耗
+                                </div>
+                                <div class="seprator"></div>
+                                <div class="incomeTargetPeriodPrime">
+                                    {{$ctrl.pie.electric.yoy.toFixed(0)}} kWh
+                                </div>
+                                <div class="incomeTargetPeriodSub">
+                                    同期电能耗
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="col-sm-6">
+                                <highcharts class="highcharts-panel text-center" options="$ctrl.chart.third"></highcharts>
+                            </div>
+                            <div class="col-sm-6 pt10" ng-if="$ctrl.pie.third">
+                                <div class="consumptionPerAreaPrime">
+                                    {{$ctrl.pie.third.now.toFixed(0)}} {{$ctrl.pie.third.unitTitle}}
+                                </div>
+                                <div class="consumptionPerAreaSub">
+                                    {{$ctrl.pie.third.nowTitle}}
+                                </div>
+                                <div class="seprator"></div>
+                                <div class="incomeTargetPeriodPrime">
+                                    {{$ctrl.pie.third.yoy.toFixed(0)}} {{$ctrl.pie.third.unitTitle}}
+                                </div>
+                                <div class="incomeTargetPeriodSub">
+                                    {{$ctrl.pie.third.yoyTitle}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row text-center">
+                            <div class="panel-heading" ng-if="$ctrl.sheet">
+                                <table class="table second-list-head">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:12%;">社会属性</th>
+                                            <th style="width:11%;">水</th>
+                                            <th style="width:11%;">电</th>
+                                            <th style="width:11%;">气</th>
+                                            <th style="width:11%;">
+                                                合计
+                                                <br>(kWh)
+                                            </th>
+                                            <th style="width:11%;">
+                                                占比
+                                                <br>(%)
+                                            </th>
+                                            <th style="width:11%;">
+                                                费用
+                                                <br>(元)
+                                            </th>
+                                            <th style="width:11%;">
+                                                同期用量
+                                                <br>(kWh)
+                                            </th>
+                                            <th style="width:11%;">
+                                                同期比
+                                                <br>(%)
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                            <div class="panel-body">
+                                <div class="second-list second-list-hover relative overflow-hidden nowrap" perfect-scrollbar="$ctrl.sheet.length">
+                                    <table class="table table-condensed">
+                                        <tbody>
+                                            <tr ng-repeat="item in $ctrl.sheet" ng-class="{selected:$ctrl.socity_current===item.socity}" ng-click="$ctrl.socity(item.socity)">
+                                                <td style="width:12%;" ng-bind="item.name"></td>
+                                                <td style="width:11%;" ng-bind="item.water.toFixed(2)"></td>
+                                                <td style="width:11%;" ng-bind="item.electric.toFixed(2)"></td>
+                                                <td style="width:11%;" ng-bind="item.gas.toFixed(2)"></td>
+                                                <td style="width:11%;" ng-bind="item.nowconsumption.toFixed(2)"></td>
+                                                <td style="width:11%;" ng-bind="item.nowrate.toFixed(2)"></td>
+                                                <td style="width:11%;" ng-bind="item.cost.toFixed(0)"></td>
+                                                <td style="width:11%;" ng-bind="item.yoyconsumption.toFixed(2)"></td>
+                                                <td style="width:11%;" ng-bind="item.yoyrate.toFixed(2)"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-sm-12">
+    <div class="row subContent">
+        <div class="btn-group btn-group-sm mt10 mr30 pull-right">
+            <a class="btn btn-info" href="javascript:void(0)" ng-class="{active:$ctrl.charttype==='spline'}" ng-click="$ctrl.typeChange('spline');">
+                                折线
+                                <i class="emweb web-spline"></i>
+                            </a>
+            <a class="btn btn-info" href="javascript:void(0)" ng-class="{active:$ctrl.charttype==='column'}" ng-click="$ctrl.typeChange('column');">
+                                柱状
+                                <i class="emweb web-column"></i>
+                            </a>
+        </div>
+        <div class="panel-heading"><span class="subTitle">能耗实时<span ng-show="$ctrl.charttype == 'column'">柱状</span><span ng-show="$ctrl.charttype == 'spline'">折线</span>图</span>
+        </div>
+        <div class="panel-body">
+            <highcharts class="highcharts-panel" options="$ctrl.chart.timeline"></highcharts>
+        </div>
+    </div>
+</div>

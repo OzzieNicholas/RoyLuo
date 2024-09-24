@@ -1,0 +1,40 @@
+<div class="modal fade">
+    <div class="modal-dialog">
+        <form class="modal-content" name="form" ng-submit="$ctrl.submit()">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h6 class="modal-title text-left">请输入控制码</h6>
+            </div>
+            <div class="modal-body form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">控制码</label>
+                    <div class="col-sm-10 has-feedback">
+                        <input class="form-control input-sm" type="text" name="command" ng-model="$ctrl.formData.command">
+                    </div>
+                    <!--<div class="btn-group btn-group-sm col-sm-10 has-feedback">
+                        <button type="button" class="btn btn-primary dropdown-toggle col-sm-12" data-toggle="dropdown">
+                            <span ng-bind="$ctrl.meterData.selected.title||'请选择控制码'">请选择控制码</span>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li ng-class="{active:!$ctrl.meterData.selected}" class="col-sm-12" ng-click="$ctrl.meterData.selected=null;"><a href="javascript:void(0)">请选择控制码</a></li>
+                            <li ng-repeat="item in $ctrl.meterData" class="col-sm-12" ng-class="{active:$ctrl.meterData.selected.id===item.id}" ng-click="$ctrl.meterData.selected=item;">
+                                <a href="javascript:void(0)" ng-bind="item.title"></a>
+                            </li>
+                        </ul>
+                    </div>-->
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">命令内容</label>
+                    <div class="col-sm-10 has-feedback">
+                        <input class="form-control input-sm" type="text" name="data" ng-model="$ctrl.formData.data">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-sm btn-primary">发送 <i class="glyphicon glyphicon-send"></i></button>
+                <button type="button" class="btn btn-sm btn-warning" ng-click="$ctrl.reset()">清空 <i class="glyphicon glyphicon-trash"></i></button>
+            </div>
+        </form>
+    </div>
+</div>

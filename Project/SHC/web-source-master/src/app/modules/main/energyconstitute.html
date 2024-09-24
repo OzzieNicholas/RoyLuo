@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="btn-group btn-group-sm mt10 mr30 pull-right">
+        <a class="btn btn-info" href="javascript:void(0)" ng-class="{active:$ctrl.charttype==='column'}" ng-click="$ctrl.typeChange('column');">
+                                柱状
+                                <i class="emweb web-column"></i>
+                            </a>
+        <a class="btn btn-info" href="javascript:void(0)" ng-class="{active:$ctrl.charttype==='spline'}" ng-click="$ctrl.typeChange('spline');">
+                                折线
+                                <i class="emweb web-spline"></i>
+                            </a>
+    </div>
+    <div class="panel-heading"><span class="subTitle">水电气构成 ( {{$ctrl.showDay}} )</span>
+    </div>
+    <div class="panel-body">
+        <div class="subContent clearfix">
+            <highcharts class="highcharts-panel highcharts-line text-center" options="$ctrl.energyconstitute"></highcharts>
+        </div>
+    </div>
+</div>

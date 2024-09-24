@@ -1,0 +1,67 @@
+/*  project模板样式 - 统计  */
+
+.app-view-project-statistic {
+    .nav-tabs {
+        background-color: transparent;
+        border-bottom: 0;
+        .form-group,
+        .input-group {
+            width: auto;
+            margin-left: 15px;
+            &>.form-control {
+                max-width: 120px;
+            }
+        }
+        &>li.active>a {
+            border: 1px solid #DDD;
+            border-color: #ddd #ddd transparent;
+        }
+    }
+    p .emweb {
+        font-size: 100%;
+    }
+    .pull-right {
+        min-height: 0;
+    }
+    .tab-content {
+        padding: 0;
+    }
+    .tab-pane {
+        position: relative;
+    }
+    .dropdown-toggle+.dropdown-menu {
+        min-width: 100%;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    }
+    .ui-grid {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+    // financial - start
+    .tool-group {
+        display: inline;
+    }
+    label.checkbox {
+        padding-left: 24px;
+    }
+    .modal>.modal-dialog {
+        width: auto;
+        margin: 15px;
+        .modal-body {
+            overflow: auto;
+        }
+    }
+    // financial - end
+}
+
+.grid-cell-50 .ui-grid-filter-container {
+    display: inline-block;
+    width: 50%;
+}
+
+ui-grid-footer {
+    color: #3C99D9;
+}

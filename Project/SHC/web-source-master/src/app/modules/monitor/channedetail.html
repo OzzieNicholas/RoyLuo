@@ -1,0 +1,46 @@
+<div class="modal fade modal-curve">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                <h4 class="modal-title" ng-bind="$ctrl.curve.title"></h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-inline text-right">
+                    <div class="btn-group btn-group-sm pull-left ml15">
+                        <a href="javascript:void(0)" class="btn btn-sm btn-primary" ng-class="{active:$ctrl.currentchannelid===item.funcid}" ng-repeat="item in $ctrl.channels" ng-click="$ctrl.currentchannelid=item.funcid;$ctrl.channeldetail()" ng-bind="item.channel"></a>
+                    </div>
+                    <div class="form-group form-group-sm has-feedback date ml15">
+                        <input type="text" class="form-control" ng-model="$ctrl.date" datetimepicker />
+                        <i class="form-control-feedback emweb web-calendar"></i>
+                    </div>
+                    <div class="btn-group btn-group-sm ml15">
+                        <a class="btn btn-primary" href="javascript:void(0)" ng-click="$ctrl.channeldetail()"><i class="emweb web-search"></i> 查询</a>
+                    </div>
+                    <div class="btn-group btn-group-sm ml15">
+                        <a class="btn btn-primary" href="javascript:void(0)" ng-repeat="(key,val) in $ctrl.timetype" ng-class="{active:$ctrl.timetype_current===key}" ng-click="$ctrl.timetypeChange(key)" ng-bind="val"></a>
+                    </div>
+                    <div class="btn-group btn-group-sm ml15">
+                        <a class="btn btn-info" href="javascript:void(0)" ng-class="{active:$ctrl.charttype==='spline'}" ng-click="$ctrl.typeChange('spline');">
+                                                    折线<i class="emweb web-spline"></i>
+                                            </a>
+                        <a class="btn btn-info" href="javascript:void(0)" ng-class="{active:$ctrl.charttype==='column'}" ng-click="$ctrl.typeChange('column');">
+                                                    柱状<i class="emweb web-column"></i>
+                                            </a>
+                    </div>
+                    <div class="btn-group btn-group-sm ml15">
+                        <a class="btn btn-info" href="javascript:void(0)" ng-class="{active:$ctrl.curve.type==='diff'}" ng-click="$ctrl.lineType('diff');">
+                                                        差值
+                                                        <i class="emweb web-curve-area"></i>
+                                                    </a>
+                        <a class="btn btn-info" href="javascript:void(0)" ng-class="{active:$ctrl.curve.type==='scale'}" ng-click="$ctrl.lineType('scale');">
+                                                        刻度
+                                                        <i class="emweb web-line-spacing"></i>
+                                                    </a>
+                    </div>
+                </div>
+                <highcharts class="highcharts-panel mt15" options="$ctrl.timeline"></highcharts>
+            </div>
+        </div>
+    </div>
+</div>

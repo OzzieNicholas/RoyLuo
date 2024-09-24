@@ -1,0 +1,42 @@
+<div class="form-group form-group-sm has-feedback date">
+    <input type="text" class="form-control" ng-model="$ctrl.fromDate" datetimepicker="{maxRangeTo:'#'+$ctrl.toDate_ID,rangeDay:30}"
+        id="{{$ctrl.fromDate_ID}}" />
+    <i class="emweb web-calendar form-control-feedback"></i>
+</div>
+<div class="input-group">至</div>
+<div class="form-group form-group-sm has-feedback date">
+    <input type="text" class="form-control" ng-model="$ctrl.toDate" datetimepicker="{minRangeTo:'#'+$ctrl.fromDate_ID,rangeDay:30,useCurrent:false}"
+        id="{{$ctrl.toDate_ID}}" />
+    <i class="emweb web-calendar form-control-feedback"></i>
+</div>
+<div class="input-group" ng-if="$ctrl.tabActive==='nearest'">
+    <div class="btn-group btn-group-sm">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            <span ng-bind="$ctrl.manual.selected.title||'所有充值'">所有充值</span>
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li ng-repeat="item in $ctrl.manual" ng-class="{active:$ctrl.manual.selected.id===item.id}" ng-click="$ctrl.manual.selected=item;">
+                <a href="javascript:void(0)" ng-bind="item.title"></a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--<div class="input-group" ng-if="$ctrl.tabActive==='nearest'">
+    <div class="btn-group btn-group-sm">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            <span ng-bind="$ctrl.status.selected.title||'所有状态'">所有状态</span>
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li ng-repeat="item in $ctrl.status" ng-class="{active:$ctrl.status.selected.key===item.key}" ng-click="$ctrl.status.selected=item;">
+                <a href="javascript:void(0)" ng-bind="item.title"></a>
+            </li>
+        </ul>
+    </div>
+</div>-->
+<div class="input-group btn-group-sm">
+    <button type="button" class="btn btn-success" ng-click="$ctrl.tabList();"><i class="emweb web-search"></i> 查询</button>
+</div>
+<div class="input-group btn-group-sm">&nbsp;</div>
+<div class="input-group btn-group-sm">&nbsp;</div>

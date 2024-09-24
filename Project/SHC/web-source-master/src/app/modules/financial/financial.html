@@ -1,0 +1,19 @@
+<div class="app-view-project-statistic">
+    <!--<p class="text-right text-info">
+        <i class="emweb web-light"></i><small><strong>提示：</strong>可手动拖动调整列宽</small>
+    </p>-->
+    <financial-main open-model="$ctrl.openModel" tab-active="$ctrl.tabActive" ng-class="{statistic5:$ctrl.tabActive=='nearest'||$ctrl.tabActive=='deficit'||$ctrl.tabActive=='all',statistic6:$ctrl.tabActive=='nearest'}"></financial-main>
+    <div class="modal fade financial-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                    <h4 class="modal-title" ng-bind="$ctrl.modal.departmentname||$ctrl.modal.title||'&nbsp;'"></h4>
+                </div>
+                <div class="modal-body">
+                    <financial-main ng-if="$ctrl.modal" modal="$ctrl.modal" modal-tab="$ctrl.modalTab" modal-title="$ctrl.modalTitle" ng-class="{statistic2:$ctrl.modalTab=='nearest',statistic3:$ctrl.modalTab=='usage'||$ctrl.modalTab=='nearest'}"></financial-main>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

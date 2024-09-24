@@ -1,0 +1,68 @@
+<div class="app-view-project-statistic" ng-class="{statistic5:$ctrl.tabActive=='settlereport',statistic8:$ctrl.tabActive=='settlereport'}">
+    <!--<p class="text-right text-info">
+        <i class="emweb web-light"></i><small><strong>提示：</strong>可手动拖动调整列宽</small>
+    </p>-->
+    <ul class="nav nav-tabs ng-cloak">
+        <li ng-repeat="(key,name) in $ctrl.tabs" ng-class="{active:$ctrl.tabActive===key}">
+            <a ui-sref="{tab:key}" ng-bind="name"></a>
+        </li>
+        <li class="pull-right form-inline">
+            <div class="form-group form-group-sm has-feedback date">
+                <input type="text" class="form-control" ng-model="$ctrl.startDate" datetimepicker="{rangeDay:$ctrl.rangeDay,maxRangeTo:'#end_date'}" id="start_date" />
+                <i class="emweb web-calendar form-control-feedback"></i>
+            </div>
+            <div class="input-group" ng-show="$ctrl.tabActive!=='dailyreport'">至</div>
+            <div class="form-group form-group-sm has-feedback date" ng-show="$ctrl.tabActive!=='dailyreport'">
+                <input type="text" class="form-control" ng-model="$ctrl.endDate" datetimepicker="{rangeDay:$ctrl.rangeDay,minRangeTo:'#start_date',useCurrent:false}" id="end_date" />
+                <i class="emweb web-calendar form-control-feedback"></i>
+            </div>
+            <div class="input-group" ng-if="!$root.User.data.groupmode">
+                <div class="btn-group btn-group-sm">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        <span ng-bind="$ctrl.billingserviceData.selected.title||'全部'">全部</span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li ng-class="{active:!$ctrl.billingserviceData.selected}" ng-click="$ctrl.billingserviceData.selected=null;">
+                            <a href="javascript:void(0)">全部</a>
+                        </li>
+                        <li ng-repeat="item in $ctrl.billingserviceData" ng-class="{active:$ctrl.billingserviceData.selected.id===item.id}" ng-click="$ctrl.billingserviceData.selected=item;">
+                            <a href="javascript:void(0)" ng-bind="item.name"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="input-group btn-group-sm">
+                <button type="button" class="btn btn-success" ng-click="$ctrl.report($ctrl.tabActive);">
+                    <i class="emweb web-search"></i> 查询</button>
+            </div>
+            <div class="input-group btn-group-sm">&nbsp;</div>
+            <div class="input-group btn-group-sm">&nbsp;</div>
+            <div class="input-group btn-group btn-group-sm ng-hide" ng-show="$ctrl.tabActive==='monthlyreport'||$ctrl.tabActive==='dailyreport'">
+                <a class="btn btn-info" href="javascript:void(0)" ng-class="{active:$ctrl.grid_timetype_current==='usage'}" ng-click="$ctrl.grid_timetype('usage')">
+                    用量
+                    <i class="emweb web-curve-area"></i>
+                </a>
+                <a class="btn btn-info" href="javascript:void(0)" ng-class="{active:$ctrl.grid_timetype_current==='scale'}" ng-click="$ctrl.grid_timetype('scale')">
+                    刻度
+                    <i class="emweb web-line-spacing"></i>
+                </a>
+            </div>
+            <div class="input-group btn-group-sm">
+                <button type="button" class="btn btn-info" ng-click="$ctrl.filter()">筛选
+                    <i class="emweb web-filter"></i>
+                </button>
+            </div>
+            <div class="input-group btn-group-sm">
+                <button type="button" class="btn btn-info" ng-click="$ctrl.export()">导出
+                    <i class="emweb web-export-excel"></i>
+                </button>
+            </div>
+        </li>
+    </ul>
+    <div class="tab-content ng-cloak">
+        <auto-height class="tab-pane subContent active" ui-i18n="'zh-cn'" id="report">
+            <div ui-grid="$ctrl.gridOptions" class="grid" ui-grid-auto-resize ui-grid-exporter ui-grid-move-columns ui-grid-resize-columns ui-grid-pinning ui-grid-grouping ui-grid-selection></div>
+        </auto-height>
+    </div>
+</div>

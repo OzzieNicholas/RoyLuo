@@ -1,0 +1,168 @@
+/*  project模板样式 - 监控  */
+
+.monitor-select2-dropdown-inverse {
+    min-width: 130px;
+    white-space: nowrap;
+}
+
+.app-view-project-monitor {
+    .nav-tabs {
+        padding-bottom: 15px;
+        border-bottom: 0;
+        background-color: transparent;
+        .btn-group {
+            a,
+            a:link,
+            a:active,
+            a:hover,
+            a:focus {
+                outline: none;
+            }
+        }
+        .pull-right {
+            line-height: 34px;
+        }
+        .select2-choice {
+            line-height: 1;
+        }
+        .multiselect,
+        .select {
+            min-width: 100px;
+        }
+        .bootstrap-switch-square {
+            display: inline-block;
+        }
+        .date .form-control {
+            max-width: 130px;
+        }
+    }
+    .tab-content {
+        padding: 0;
+    }
+    .tab-pane {
+        // position: relative;
+    } // .ui-grid {
+    // position: absolute;
+    // top: 0;
+    // bottom: 0;
+    // width: 100%;
+    //     height: 100%;
+    // }
+    .modal-curve .modal-dialog {
+        width: auto;
+        margin: 15px;
+        .date>.form-control {
+            max-width: 142px;
+        }
+        .modal-body {
+            min-height: 320px;
+        }
+    }
+    .table-bordered {
+        tr:hover>td,
+        tr>th {
+            background-color: #FFF;
+        }
+        tr>th:first-child~th {
+            text-align: center;
+        }
+        tr>td:first-child {
+            text-align: left;
+        }
+        tr>td {
+            vertical-align: middle;
+        }
+    }
+    .table,
+    .table .form-group,
+    .table .input-group,
+    .table .form-control,
+    .modal .form-group:last-child,
+    .ui-slider {
+        margin-bottom: 0;
+    }
+    .modal .form-horizontal .control-label {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .form-group>.form-control,
+    span.form-control {
+        background-color: transparent;
+    }
+    .form-group-sm.has-feedback>.form-control {
+        &+.form-control-feedback {
+            width: 34px;
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+        }
+    }
+    .input-group .form-control {
+        width: auto;
+    }
+    i[class*="web-speed-"] {
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+        font-size: 36px;
+        color: #CCC;
+        cursor: pointer;
+        &.active {
+            color: #1abc9c;
+        }
+    }
+    .form-group,
+    .input-group {
+        .emweb {
+            font-size: 100%;
+        }
+    }
+    .input-group>.input-group-addon {
+        padding: 2px 5px;
+    }
+    .focus>.form-control,
+    .form-control:focus {
+        &,
+        &+.form-control-feedback {
+            border-color: #1abc9c;
+            color: #1abc9c;
+        }
+    }
+    .has-feedback,
+    switch {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .ui-grid {
+        height: 100%;
+        .form-group {
+            margin-bottom: 0;
+        }
+    }
+    .pointer {
+        cursor: pointer;
+    }
+    .ui-grid-cell-contents {
+        .btn-primary {
+            background-color: #ccc;
+            border-color: #ccc;
+        }
+        .btn-primary:hover,
+        .btn-primary.hover,
+        .btn-primary:focus,
+        .btn-primary:active,
+        .btn-primary.active,
+        .open>.dropdown-toggle.btn-primary {
+            background-color: #1ABC9C;
+            border-color: #1ABC9C;
+        }
+    }
+    .ui-grid-cell {
+        .btn-sm {
+            margin-bottom: 10px;
+        }
+    }
+    .ui-grid-render-container .ui-grid-header {
+        height: 40px;
+    }
+}

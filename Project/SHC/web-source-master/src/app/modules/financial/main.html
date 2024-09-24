@@ -1,0 +1,23 @@
+<ul class="nav nav-tabs">
+    <li ng-if="$ctrl.modal" class="active">
+        <a href="javascript:void(0)" ng-bind="$ctrl.modalTitle"></a>
+    </li>
+    <li ng-if="!$ctrl.modal" ng-repeat="(key,name) in $ctrl.tabs" ng-class="{active:$ctrl.tabActive===key}">
+        <a ui-sref="{tab:key}" ng-bind="name"></a>
+    </li>
+    <li class="pull-right form-inline">
+        <div class="tool-group" ng-if="$ctrl.tabActive==='nearest'||$ctrl.tabActive==='usage'" ng-include="'app/modules/financial/tool.html'"></div>
+        <div class="input-group btn-group-sm">
+            <button type="button" class="btn btn-info" ng-click="$ctrl.filter()">筛选<i class="emweb web-filter"></i></button>
+        </div>
+        <div class="input-group btn-group-sm">
+            <button type="button" class="btn btn-info" ng-click="$ctrl.export()">导出<i class="emweb web-export-excel"></i></button>
+        </div>
+    </li>
+</ul>
+<div class="tab-content">
+    <auto-height fix-height="$ctrl.autoHeight" class="tab-pane subContent active" ui-i18n="'zh-cn'">
+        <div ui-grid="$ctrl.gridOptions" class="grid" ui-grid-auto-resize ui-grid-exporter ui-grid-move-columns ui-grid-resize-columns
+            ui-grid-infinite-scroll></div>
+    </auto-height>
+</div>

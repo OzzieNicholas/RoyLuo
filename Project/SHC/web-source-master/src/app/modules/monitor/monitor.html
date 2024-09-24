@@ -1,0 +1,77 @@
+<style>
+    .special {
+        margin-right: 12px;
+        color: #1abc9c;
+        font-size: 16px;
+    }
+
+    .special b {
+        color: #000;
+        font-weight: 700;
+        font-family: '';
+    }
+</style>
+<div class="app-view-project-monitor text-center ng-cloak">
+    <!-- nav tabs -->
+    <ul class="nav nav-tabs mr15">
+        <li>
+            <div ng-if="!$root.User.data.groupmode" class="btn-group">
+                <a href="javascript:void(0)" class="btn btn-sm btn-primary" ng-class="{active:$ctrl.deviceType.selected.id===item.id}" ng-repeat="item in $ctrl.deviceType" ng-click="$ctrl.deviceType.select(item)" ng-bind="item.name"></a>
+            </div>
+        </li>
+        <!--<li ng-bind="$ctrl.count"></li>-->
+        <!--数据显示-->
+
+        <li class="pull-right form-inline">
+            <span ng-if="!$root.User.data.groupmode" class="special"><b>设备总数：</b>{{$ctrl.itemLength||0}}<b> 个</b></span>
+            <form class="input-group input-group-sm mr15" ng-submit="$ctrl.list()">
+
+                <input type="text" placeholder="请输入关键字" class="form-control" ng-model="$ctrl.searchKey" />
+                <span class="input-group-btn">
+                    <button type="submit" class="btn"><span class="fui-search"></span></button>
+                </span>
+            </form>
+            <div class="btn-group mr15" ng-if="!$root.User.data.groupmode">
+                <b>状态</b>
+                <switch class="bootstrap-switch-square ml10" state="$ctrl.showException" on-switch="$ctrl.exceptionChange()" data-on-text="异常" data-off-text="全部" data-on-color="warning" data-off-color="primary"></switch>
+            </div>
+            <div class="btn-group" ng-if="!$root.User.data.groupmode">
+                <b>社会属性</b>
+                <switch class="bootstrap-switch-square ml10" state="$ctrl.isHide" data-on-text="隐藏" data-off-text="显示" data-on-color="info" data-off-color="primary"></switch>
+            </div>
+            <div class="form-group form-group-sm has-feedback date" ng-show="$root.User.data.groupmode">
+                <input type="text" class="form-control" ng-model="$ctrl.date" datetimepicker="{format:'YYYY-MM'}" />
+                <i class="form-control-feedback emweb web-calendar"></i>
+            </div>
+            <div class="form-group form-group-sm ml15" ng-show="$root.User.data.groupmode">
+                <select class="form-control select select-primary select-block">
+                    <option value="">全部</option>
+                    <option value="1">0-1.8 KWh</option>
+                    <option value="2">1.8-3.8 KWh</option>
+                    <option value="3">3.8-5.7 KWh</option>
+                    <option value="4">5.7-7.7 KWh</option>
+                    <option value="5">7.7-∞ KWh</option>
+                </select>
+            </div>
+            <div class="input-group btn-group-sm ml15" ng-show="$root.User.data.groupmode">
+                <button type="button" class="btn btn-primary" ng-click="$ctrl.list();"><i class="emweb web-search"></i> 查询</button>
+            </div>
+            <!--<div class="input-group btn-group-sm ml30">
+                <button type="button" class="btn btn-info" ng-click="$ctrl.filter()">筛选<i class="emweb web-filter"></i></button>
+            </div>-->
+            <div class="input-group btn-group-sm ml15">
+                <button type="button" class="btn btn-info" ng-click="$ctrl.export()">导出<i class="emweb web-export-excel"></i></button>
+            </div>
+        </li>
+    </ul>
+    <div class="flex">
+        <div class="tab-content relative flex-tab-left mr15" ng-class="{w80:!$ctrl.isHide===true}">
+            <auto-height class="tab-pane active col-xs-12 pl0 pr0" ui-i18n="'zh-cn'">
+                <div ui-grid="$ctrl.gridOptions" class="grid text-left" ui-grid-exporter ui-grid-auto-resize ui-grid-move-columns ui-grid-resize-columns ui-grid-infinite-scroll ui-grid-pinning></div>
+            </auto-height>
+        </div>
+        <customer class="flex-tab-right" ng-class="{w200px:!$ctrl.isHide===true}" style="margin-right:-15px" ng-if="!$root.User.data.groupmode" customer-selected="$ctrl.customerSelected"></customer>
+    </div>
+    <control-command selected="$ctrl.selectedItem"></control-command>
+    <channeldetail ng-if="!$root.User.data.groupmode" channels="$ctrl.curveChannels" curve="$ctrl.realData"></channeldetail>
+</div>

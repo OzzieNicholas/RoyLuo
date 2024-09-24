@@ -1,0 +1,113 @@
+<div class="row">
+    <div class="col-sm-4">
+        <div class="row">
+            <div class="panel-heading"><span class="subTitle">建筑能耗收入</span></div>
+            <div class="panel-body">
+                <div class="subContent text-center">
+                    <div class="panel-heading btn-group">
+                        <a class="btn btn-primary" href="javascript:void(0)" ng-repeat="(key,val) in $ctrl.timetype" ng-class="{active:$ctrl.timetype_current===key}" ng-click="$ctrl.timetypeChange(key)" ng-bind="val"></a>
+                    </div>
+                    <div class="panel-body">
+                        <div class="first-list">
+                            <div class="media" ng-click="$ctrl.check('consumption')">
+                                <div class="media-left badge" ng-class="{'badge-primary':$ctrl.current==='consumption'}">总用能</div>
+                                <div class="media-body">
+                                    <div>
+                                        <!--content-->
+                                    </div>
+                                </div>
+                                <div class="media-right media-middle" ng-bind="$ctrl.data.consumption"></div>
+                            </div>
+                            <div class="media" ng-click="$ctrl.check('electric')">
+                                <div class="media-left badge" ng-class="{'badge-primary':$ctrl.current==='electric'}">总电能</div>
+                                <div class="media-body">
+                                    <div>
+                                        <!--content-->
+                                    </div>
+                                </div>
+                                <div class="media-right media-middle" ng-bind="$ctrl.data.electric"></div>
+                            </div>
+                            <div class="media" ng-click="$ctrl.check('eer')">
+                                <div class="media-left badge" ng-class="{'badge-primary':$ctrl.current==='eer'}">能效比</div>
+                                <div class="media-body">
+                                    <div>
+                                        <!--content-->
+                                    </div>
+                                </div>
+                                <div class="media-right media-middle" ng-bind="$ctrl.data.eer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-8 content-right">
+        <div class="row">
+            <div class="panel-heading"><span class="subTitle">能耗收入比</span></div>
+            <div class="panel-body">
+                <div class="subContent clearfix">
+                    <div class="col-sm-12">
+                        <div class="row text-center">
+                            <div class="panel-heading second-list-top">
+                                <table class="table second-list-head">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:20%;">项目名称</th>
+                                            <th style="width:16%;">总用量</th>
+                                            <th style="width:16%;" ng-if="$ctrl.current==='consumption'">总用量比</th>
+                                            <th style="width:16%;" ng-if="$ctrl.current==='consumption'">同期用量</th>
+                                            <th style="width:16%;" ng-if="$ctrl.current==='consumption'">同期用量比</th>
+                                            <th style="width:16%;" ng-if="$ctrl.current!=='consumption'">总电能</th>
+                                            <th style="width:16%;" ng-if="$ctrl.current!=='consumption'">总收入</th>
+                                            <th style="width:16%;" ng-if="$ctrl.current!=='consumption'">能效比</th>
+                                            <th style="width:16%;">建筑面积</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                            <div class="panel-body">
+                                <div class="second-list relative overflow-hidden nowrap" perfect-scrollbar="$ctrl.sheet.length">
+                                    <table class="table table-condensed">
+                                        <tbody>
+                                            <tr ng-repeat="item in $ctrl.sheet">
+                                                <td style="width:20%;" class="text-left" ng-bind="item.name"></td>
+                                                <td style="width:16%;" ng-bind="item.now.consumption"></td>
+                                                <td style="width:16%;" ng-if="$ctrl.current==='consumption'" ng-bind="item.now.rate"></td>
+                                                <td style="width:16%;" ng-if="$ctrl.current==='consumption'" ng-bind="item.yoy.consumption"></td>
+                                                <td style="width:16%;" ng-if="$ctrl.current==='consumption'" ng-bind="item.yoy.rate"></td>
+                                                <td style="width:16%;" ng-if="$ctrl.current!=='consumption'" ng-bind="item.now.electric"></td>
+                                                <td style="width:16%;" ng-if="$ctrl.current!=='consumption'" ng-bind="item.now.earning"></td>
+                                                <td style="width:16%;" ng-if="$ctrl.current!=='consumption'" ng-bind="item.now.eer"></td>
+                                                <td style="width:16%;" ng-bind="item.area"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-sm-12">
+    <div class="row subContent">
+        <div class="btn-group btn-group-sm mt10 mr30 pull-right">
+            <a class="btn btn-info" href="javascript:void(0)" ng-class="{active:$ctrl.charttype==='spline'}" ng-click="$ctrl.typeChange('spline');">
+                                折线
+                                <i class="emweb web-spline"></i>
+                            </a>
+            <a class="btn btn-info" href="javascript:void(0)" ng-class="{active:$ctrl.charttype==='column'}" ng-click="$ctrl.typeChange('column');">
+                                柱状
+                                <i class="emweb web-column"></i>
+                            </a>
+        </div>
+        <div class="panel-heading"><span class="subTitle">项目能耗<span ng-show="$ctrl.charttype == 'column'">柱状</span><span ng-show="$ctrl.charttype == 'spline'">折线</span>图</span>
+        </div>
+        <div class="panel-body">
+            <highcharts class="highcharts-panel text-center" options="$ctrl.chart.timeline"></highcharts>
+        </div>
+    </div>
+</div>

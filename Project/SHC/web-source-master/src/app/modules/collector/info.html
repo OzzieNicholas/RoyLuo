@@ -1,0 +1,106 @@
+<div class="panel panel-default mb0 layout-column single-edit" style="height:100%;min-height: 100%;overflow: scroll;">
+    <div class="panel-body flex-initial pb0">
+        <!--<form class="form-inline pb10 bb">-->
+        <!--<div class="pull-right pb10">
+                    <span class="text-blue pointer mr15" ui-sref="dashboard.collector.create" ng-show="$root.Rule.dashboard.collector.create">
+                        添加
+                    </span>
+                </div>-->
+        <!--</form>-->
+    </div>
+    <div class="panel-body flex overflow-auto pt0 pb0" style="height: 86%;">
+        <table class="table table-bordered table-hover mb0">
+            <thead align="center">
+                <tr>
+                    <th style="text-align:center;">
+                        <!--全选-->
+                        <checkbox checked="multiCheck.all" on-check="multiCheck('all')"></checkbox>
+                    </th>
+                    <th>序号</th>
+                    <th width="120">建筑编码</th>
+                    <th>名称描述</th>
+                    <th>设备模式</th>
+                    <th>连线状态</th>
+                    <th>最后通讯时间</th>
+                    <th>管理器IP地址</th>
+                    <th width="120">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in items.detail">
+                    <td style="width:60px;text-align:center;">
+                        <checkbox checked="item.isSelected" on-check="multiCheck(item)"></checkbox>
+                    </td>
+                    <td ng-bind="(currentPage-1)*20+$index+1"></td>
+                    <td>{{item.tag}}</td>
+                    <td class="row-title p0" ng-mouseenter="update=true" ng-mouseleave="update=false;item.titleIsOpen=undefined" width="173">
+                        <nobr class="dash-update">
+                            <span popover-placement="top" uib-popover="{{item.description}}" popover-is-open="over1" ng-mouseenter="over1=true" ng-mouseleave="over1=false">{{item.title || '-'}}</span>
+                            <a ng-show="update" popover-is-open="item.titleIsOpen" uib-popover-template="popover.url.title" popover-title="{{popover.title.title}}" popover-placement="bottom" ng-click="Change.title=item.title;popIsOpen()" class="pull-right font-update pointer">修改</a>
+                        </nobr>
+                    </td>
+                    <td>
+                        <!--<label class="switch switch-sm mb0">
+                                        <input type="checkbox" ng-model="item.switch" ng-click="switchStatus(item,$event)">
+                                        <span><i class="handle"></i></span>
+                            </label>-->
+                        <span ng-show="item.status == 'DEBUG'">调试中</span>
+                        <span ng-show="item.status == 'ONLINE'">运行中</span>
+                        <a class="btn-link ml5" ng-click="switchStatus(item,$event)">切换</a>
+                    </td>
+                    <td>
+                        <span class="badge text-center" ng-class="{'ft-success':item.isconnect,'ft-danger':!item.isconnect}" popover-placement="top" uib-popover="{{item.lastupdate == 0 && '未通讯' || item.lastupdate*1000 | date:'yyyy-M-dd H:mm:ss'}}" popover-is-open="over2" ng-mouseenter="over2=true" ng-mouseleave="over2=false">{{item.isconnect && '在线' || '离线'}}</span>
+                    </td>
+                    <td>{{item.lastupdate*1000 | date:'yyyy-M-dd H:mm:ss'}}</td>
+                    <td>
+                        <span popover-placement="top" uib-popover="固件版本：{{item.software || '-'}} 硬件信息：{{item.hardware || '-'}}" popover-is-open="over3" ng-mouseenter="over3=true" ng-mouseleave="over3=false">{{item.ip || '-'}}</span>
+                    </td>
+                    <td>
+                        <!-- <a class="btn-link mr5" ui-sref="dashboard.collector.edit({id:item.id})" ng-show="$root.Rule.dashboard.collector.edit">编辑</a>
+                        <a class="btn-link" ng-click="AskForRemove($event, item.id)" ng-show="item.id != askingRemoveID && $root.Rule.dashboard.collector.delete">删除</a> -->
+                        <!-- <a class="btn-link mr5" ui-sref="dashboard.collector.edit({id:item.id})">编辑</a> -->
+                        <a class="btn-link" ng-click="AskForRemove($event, item.id)">删除</a>
+                        <a class="btn-link mr5" ng-show="item.id == askingRemoveID" ng-click="CancelRemove($event, item.id)">取消</a>
+                        <a class="btn-link" ng-show="item.id == askingRemoveID" ng-click="DoRemove($event, item.id, $index)">确定</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="panel-body flex-initial p10">
+        <div class="pt15 bt">
+            <div class="pull-left">
+                <button type="button" class="btn mr10" ng-class="{'btn-primary':showButton}" ng-click="switchAll('ONLINE',$event)" ng-disabled="!showButton">运行</button>
+                <button type="button" class="btn" ng-class="{'btn-primary':showButton}" ng-click="switchAll('DEBUG',$event)" ng-disabled="!showButton">调试</button>
+            </div>
+            <div class="pull-right">
+                <span class="inline fs34" style="vertical-align:top;line-height: 44px;">管理器总数{{items.paging.count[0].count || 0}}条</span>
+                <ul uib-pagination class="mt0 mb0 ml10" total-items="items.paging.count[0].count" ng-model="currentPage" items-per-page="20" max-size="20" rotate="false" boundary-links="true" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/ng-template" id="modal-collectorStatus.html">
+    <div class="container-fluid">
+        <div align="center" style="padding: 30; border-bottom: 1px solid #E5E5E5; min-height: 16; ">
+            <h4>是否确认切换该数据管理器状态</h4>
+        </div>
+        <div align="center">
+            <p ng-if="item.status == 'DEBUG'">切换调试状态到正式运行状态，系统将不再跟着管理器的修改自动识别仪表参数的改动，请确认此管理器所有调试修改已完成</p>
+            <p ng-if="item.status == 'ONLINE'">切换正式运行状态到调试状态，系统将自动同步管理器的所有仪表参数修改，请确认要同步管理器上的所有参数修改</p>
+        </div>
+        <div style="margin-top: 15px; padding: 0px 20px 20px; text-align: center;">
+            <button class="btn btn-primary" ng-click="ok()">确定</button>
+            <button class="btn btn-default" ng-click="cancel()">取消</button>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="titleChange.html">
+    <div class="modal-body text-center">
+        <input type="text" class="form-control" ng-model="Change.title" auto-focus>
+    </div>
+    <div class="modal-footer text-center">
+        <button class="btn btn-sm btn-primary mr5" ng-click="popover.ok(item,'title',Change)">修改</button>
+        <button class="btn btn-sm btn-default" ng-click="popover.cancel(item,'title')">取消</button>
+    </div>
+</script>

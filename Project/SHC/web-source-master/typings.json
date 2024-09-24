@@ -1,0 +1,10 @@
+{
+  "globalDependencies": {
+    "jquery": "registry:dt/jquery#1.10.0+20170310222111",
+    "moment": "registry:dt/moment#2.11.1+20161010105546"
+  },
+  "dependencies": {
+    "angular": "registry:dt/angular#1.6.0+20170321201455",
+    "angular-ui-router": "registry:dt/angular-ui-router#1.1.5+20161222093745"
+  }
+}
