@@ -1,0 +1,22 @@
+<I.C SCRIPT>  WINNT 1
+M8 1 "" ""
+M2 1 CAADraftingInterfaces.tst
+M1 2 CATTPSInterfaces,1
+M1 2 DraftingInterfaces,1
+M1 2 SketcherInterfaces,1
+M1 2 Mathematics,1
+M1 2 NewTopologicalObjects,1
+M1 2 GeometricObjects,1
+M1 2 ProductStructure,1
+M1 2 MecModInterfaces,1
+M1 2 ObjectModelerBase,1
+M1 2 ObjectSpecsModeler,1
+M1 2 ApplicationFrame,1
+M1 2 DialogEngine,1
+M1 2 Dialog,1
+M1 2 VisualizationBase,1
+M1 2 Visualization,1
+M1 2 InfInterfaces,1
+M1 2 System,1
+M1 2 System,2
+EOF

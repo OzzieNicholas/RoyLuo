@@ -1,0 +1,5 @@
+!<mkRTViewData> v1.0.0
+INT/000/CUS .\win_b64\code\lib\CAADrwCenterLine.exp|.\CAADraftingInterfaces\CAADrwCenterLine.m
+RTV/001/CUS .\win_b64\code\bin\CAADrwCenterLine.dll|.\CAADraftingInterfaces\CAADrwCenterLine.m
+INT/000/CUS .\win_b64\code\bin\CAADrwCenterLine.pdb|.\CAADraftingInterfaces\CAADrwCenterLine.m
+BTV/000/CUS .\win_b64\code\lib\CAADrwCenterLine.lib|.\CAADraftingInterfaces\CAADrwCenterLine.m

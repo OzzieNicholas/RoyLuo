@@ -1,0 +1,93 @@
+mkmk  -u -g  CAADrwCenterLine.m
+2024/9/25 17:00:27
+
+## start step: CIbuild   at 09/25/2024-17:00:27
+## end   step: CIbuild   at 09/25/2024-17:00:27
+
+## start step: DataUpdate   at 09/25/2024-17:00:27
+# make:  CAADraftingInterfaces\IdentityCard\Objects\win_b64\.mkdata.mk
+## end   step: DataUpdate   at 09/25/2024-17:00:27
+
+## start step: DataUpdate   at 09/25/2024-17:00:27
+# make:  CAADraftingInterfaces\CAADrwCenterLine.m\Objects\win_b64\.mkdata.mk
+## end   step: DataUpdate   at 09/25/2024-17:00:27
+
+## start step: CIcompilation   at 09/25/2024-17:00:27
+## end   step: CIcompilation   at 09/25/2024-17:00:27
+
+## start step: headerlist   at 09/25/2024-17:00:27
+## end   step: headerlist   at 09/25/2024-17:00:27
+
+## start step: headermap   at 09/25/2024-17:00:27
+## end   step: headermap   at 09/25/2024-17:00:27
+
+## start step: fwgrammar   at 09/25/2024-17:00:27
+## end   step: fwgrammar   at 09/25/2024-17:00:27
+
+## start step: grammar1st   at 09/25/2024-17:00:27
+## end   step: grammar1st   at 09/25/2024-17:00:28
+
+## start step: headerlist   at 09/25/2024-17:00:28
+## end   step: headerlist   at 09/25/2024-17:00:28
+
+## start step: headermap   at 09/25/2024-17:00:28
+## end   step: headermap   at 09/25/2024-17:00:28
+
+## start step: grammar2nd   at 09/25/2024-17:00:28
+## end   step: grammar2nd   at 09/25/2024-17:00:28
+
+## start step: typelibgrammar   at 09/25/2024-17:00:28
+## end   step: typelibgrammar   at 09/25/2024-17:00:28
+
+## start step: headerlist   at 09/25/2024-17:00:28
+## end   step: headerlist   at 09/25/2024-17:00:28
+
+## start step: headermap   at 09/25/2024-17:00:28
+## end   step: headermap   at 09/25/2024-17:00:28
+
+## start step: headerruler   at 09/25/2024-17:00:28
+## end   step: headerruler   at 09/25/2024-17:00:28
+
+## start step: compilation   at 09/25/2024-17:00:28
+# make:  CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp
+CAADrwDistanceDimCmd.cpp
+C:\CATIA\DassaultSystemes\B19\.\DraftingInterfaces\PublicInterfaces\CATIDrwBreakElemFactory.h(28) : error C2011: “CATIDrwBreakElemFactory”: “class”类型重定义
+        C:\CATIA\DassaultSystemes\B19\.\DraftingInterfaces\PublicInterfaces\CATIDrwBreakElemFactory.h(28) : 参见“CATIDrwBreakElemFactory”的声明
+C:\CATIA\DassaultSystemes\B19\.\DraftingInterfaces\PublicInterfaces\CATIDrwBreakElemFactory.h(58) : error C2011: “CATIDrwBreakElemFactory_var”: “class”类型重定义
+        C:\CATIA\DassaultSystemes\B19\.\DraftingInterfaces\PublicInterfaces\CATIDrwBreakElemFactory.h(58) : 参见“CATIDrwBreakElemFactory_var”的声明
+C:\CATIA\DassaultSystemes\B19\.\DraftingInterfaces\PublicInterfaces\CATIDrwBreakElemFactory.h(58) : error C2027: 使用了未定义类型“CATIDrwBreakElemFactory_var”
+        C:\CATIA\DassaultSystemes\B19\.\DraftingInterfaces\PublicInterfaces\CATIDrwBreakElemFactory.h(58) : 参见“CATIDrwBreakElemFactory_var”的声明
+C:\CATIA\DassaultSystemes\B19\.\DraftingInterfaces\PublicInterfaces\CATIDrwBreakElemFactory.h(58) : error C2059: 语法错误 : “)”
+C:\CATIA\DassaultSystemes\B19\.\DraftingInterfaces\PublicInterfaces\CATIDrwBreakElemFactory.h(58) : error C2059: 语法错误 : “)”
+C:\CATIA\DassaultSystemes\B19\.\DraftingInterfaces\PublicInterfaces\CATIDrwBreakElemFactory.h(58) : error C2143: 语法错误 : 缺少“;”(在“{”的前面)
+C:\CATIA\DassaultSystemes\B19\.\DraftingInterfaces\PublicInterfaces\CATIDrwBreakElemFactory.h(58) : error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
+C:\CATIA\DassaultSystemes\B19\.\DraftingInterfaces\PublicInterfaces\CATIDrwBreakElemFactory.h(58) : error C2027: 使用了未定义类型“CATIDrwBreakElemFactory_var”
+        C:\CATIA\DassaultSystemes\B19\.\DraftingInterfaces\PublicInterfaces\CATIDrwBreakElemFactory.h(58) : 参见“CATIDrwBreakElemFactory_var”的声明
+C:\CATIA\DassaultSystemes\B19\.\DraftingInterfaces\PublicInterfaces\CATIDrwBreakElemFactory.h(58) : error C2143: 语法错误 : 缺少“)”(在“*”的前面)
+C:\CATIA\DassaultSystemes\B19\.\DraftingInterfaces\PublicInterfaces\CATIDrwBreakElemFactory.h(58) : error C2143: 语法错误 : 缺少“;”(在“*”的前面)
+C:\CATIA\DassaultSystemes\B19\.\DraftingInterfaces\PublicInterfaces\CATIDrwBreakElemFactory.h(58) : error C2079: “CATBaseUnknown”使用未定义的 class“CATIDrwBreakElemFactory_var”
+C:\CATIA\DassaultSystemes\B19\.\DraftingInterfaces\PublicInterfaces\CATIDrwBreakElemFactory.h(58) : error C2433: “CATBaseUnknown”: 不允许在数据声明中使用“inline”
+C:\CATIA\DassaultSystemes\B19\.\DraftingInterfaces\PublicInterfaces\CATIDrwBreakElemFactory.h(58) : error C2059: 语法错误 : “)”
+C:\CATIA\DassaultSystemes\B19\.\DraftingInterfaces\PublicInterfaces\CATIDrwBreakElemFactory.h(58) : error C2470: “base”: 看起来像函数定义，但没有参数列表；跳过明显的函数体
+C:\CATIA\DassaultSystemes\B19\.\DraftingInterfaces\PublicInterfaces\CATIDrwBreakElemFactory.h(58) : fatal error C1903: 无法从以前的错误中恢复；正在停止编译
+# make-ERROR: CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp
+## end   step: compilation   at 09/25/2024-17:00:30
+
+## start step: sourceruler   at 09/25/2024-17:00:30
+## end   step: sourceruler   at 09/25/2024-17:00:30
+
+## start step: link1st   at 09/25/2024-17:00:30
+# make: CAADraftingInterfaces\CAADrwCenterLine.m win_b64\code\lib\CAADrwCenterLine.lib
+# syst-ERROR: C:\CAA\Code\DimensionTest\.\CAADraftingInterfaces\CAADrwCenterLine.m\Objects\win_b64\CAADrwDistanceDimCmd.obj: No such file or directory
+# make-ERROR: win_b64\code\lib\CAADrwCenterLine.lib
+## end   step: link1st   at 09/25/2024-17:00:30
+
+## start step: link2nd   at 09/25/2024-17:00:30
+# make: CAADraftingInterfaces\CAADrwCenterLine.m win_b64\code\bin\CAADrwCenterLine.dll
+# syst-ERROR: C:\CAA\Code\DimensionTest\.\CAADraftingInterfaces\CAADrwCenterLine.m\Objects\win_b64\CAADrwDistanceDimCmd.obj: No such file or directory
+# syst-ERROR: C:\CAA\Code\DimensionTest\.\win_b64\code\lib\CAADrwCenterLine.exp: No such file or directory
+# make-ERROR: win_b64\code\bin\CAADrwCenterLine.dll
+## end   step: link2nd   at 09/25/2024-17:00:30
+
+## start step: dummynls   at 09/25/2024-17:00:30
+## end   step: dummynls   at 09/25/2024-17:00:30

@@ -1,0 +1,5 @@
+!<mkRTViewData> v1.0.0
+INT/000/CUS .\win_b64\code\lib\CAADrwMultiSheetCmd.exp|.\CAADraftingInterfaces\CAADrwMultiSheetCmd.m
+BTV/000/CUS .\win_b64\code\lib\CAADrwMultiSheetCmd.lib|.\CAADraftingInterfaces\CAADrwMultiSheetCmd.m
+RTV/001/CUS .\win_b64\code\bin\CAADrwMultiSheetCmd.dll|.\CAADraftingInterfaces\CAADrwMultiSheetCmd.m
+INT/000/CUS .\win_b64\code\bin\CAADrwMultiSheetCmd.pdb|.\CAADraftingInterfaces\CAADrwMultiSheetCmd.m

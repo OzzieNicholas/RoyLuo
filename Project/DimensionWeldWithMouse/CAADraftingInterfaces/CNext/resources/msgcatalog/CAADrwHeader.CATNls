@@ -1,0 +1,13 @@
+
+
+CAADrwHeader.CenterLine.Title="标注距离";
+CAADrwHeader.CenterLine.ShortHelp= "标注距离";
+CAADrwHeader.CenterLine.Help="标注距离";
+
+
+CAADrwHeader.DistanceDim.Title="自动标注距离";
+CAADrwHeader.DistanceDim.ShortHelp= "自动标注距离";
+CAADrwHeader.DistanceDim.Help="自动标注距离";
+
+
+

@@ -1,0 +1,88 @@
+mkmk  -u -g  CAADrwCenterLine.m
+2024/9/25 16:41:43
+
+## start step: CIbuild   at 09/25/2024-16:41:44
+## end   step: CIbuild   at 09/25/2024-16:41:44
+
+## start step: DataUpdate   at 09/25/2024-16:41:44
+# make:  CAADraftingInterfaces\IdentityCard\Objects\win_b64\.mkdata.mk
+## end   step: DataUpdate   at 09/25/2024-16:41:44
+
+## start step: DataUpdate   at 09/25/2024-16:41:44
+# make:  CAADraftingInterfaces\CAADrwCenterLine.m\Objects\win_b64\.mkdata.mk
+## end   step: DataUpdate   at 09/25/2024-16:41:44
+
+## start step: CIcompilation   at 09/25/2024-16:41:44
+## end   step: CIcompilation   at 09/25/2024-16:41:44
+
+## start step: headerlist   at 09/25/2024-16:41:44
+## end   step: headerlist   at 09/25/2024-16:41:44
+
+## start step: headermap   at 09/25/2024-16:41:44
+## end   step: headermap   at 09/25/2024-16:41:44
+
+## start step: fwgrammar   at 09/25/2024-16:41:44
+## end   step: fwgrammar   at 09/25/2024-16:41:44
+
+## start step: grammar1st   at 09/25/2024-16:41:44
+## end   step: grammar1st   at 09/25/2024-16:41:44
+
+## start step: headerlist   at 09/25/2024-16:41:44
+## end   step: headerlist   at 09/25/2024-16:41:44
+
+## start step: headermap   at 09/25/2024-16:41:44
+## end   step: headermap   at 09/25/2024-16:41:44
+
+## start step: grammar2nd   at 09/25/2024-16:41:44
+## end   step: grammar2nd   at 09/25/2024-16:41:44
+
+## start step: typelibgrammar   at 09/25/2024-16:41:44
+## end   step: typelibgrammar   at 09/25/2024-16:41:44
+
+## start step: headerlist   at 09/25/2024-16:41:44
+## end   step: headerlist   at 09/25/2024-16:41:44
+
+## start step: headermap   at 09/25/2024-16:41:44
+## end   step: headermap   at 09/25/2024-16:41:44
+
+## start step: headerruler   at 09/25/2024-16:41:44
+## end   step: headerruler   at 09/25/2024-16:41:44
+
+## start step: compilation   at 09/25/2024-16:41:44
+# make:  CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp
+CAADrwDistanceDimCmd.cpp
+C:\CAA\Code\DimensionTest\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(105) : error C2065: “spListElem”: 未声明的标识符
+C:\CAA\Code\DimensionTest\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(106) : error C2146: 语法错误 : 缺少“;”(在标识符“；”的前面)
+C:\CAA\Code\DimensionTest\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(106) : error C2065: “；”: 未声明的标识符
+C:\CAA\Code\DimensionTest\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(106) : error C2146: 语法错误 : 缺少“;”(在标识符“spElementLine2”的前面)
+C:\CAA\Code\DimensionTest\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(108) : error C2146: 语法错误 : 缺少“;”(在标识符“；”的前面)
+C:\CAA\Code\DimensionTest\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(108) : error C2146: 语法错误 : 缺少“;”(在标识符“CATIDrwAnnotationFactory_var”的前面)
+C:\CAA\Code\DimensionTest\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(108) : error C2146: 语法错误 : 缺少“;”(在标识符“piDrwFact”的前面)
+C:\CAA\Code\DimensionTest\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(108) : error C2275: “CATIDrwAnnotationFactory_var”: 将此类型用作表达式非法
+        C:\CATIA\DassaultSystemes\B19\.\DraftingInterfaces\PublicInterfaces\CATIDrwAnnotationFactory.h(772) : 参见“CATIDrwAnnotationFactory_var”的声明
+C:\CAA\Code\DimensionTest\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(108) : error C2065: “piDrwFact”: 未声明的标识符
+C:\CAA\Code\DimensionTest\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(128) : error C2227: “->CreateDimension”的左边必须指向类/结构/联合/泛型类型
+        类型是“'unknown-type'”
+C:\CAA\Code\DimensionTest\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(138) : error C2227: “->Release”的左边必须指向类/结构/联合/泛型类型
+        类型是“'unknown-type'”
+# make-ERROR: CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp
+## end   step: compilation   at 09/25/2024-16:41:47
+
+## start step: sourceruler   at 09/25/2024-16:41:47
+## end   step: sourceruler   at 09/25/2024-16:41:47
+
+## start step: link1st   at 09/25/2024-16:41:47
+# make: CAADraftingInterfaces\CAADrwCenterLine.m win_b64\code\lib\CAADrwCenterLine.lib
+# syst-ERROR: C:\CAA\Code\DimensionTest\.\CAADraftingInterfaces\CAADrwCenterLine.m\Objects\win_b64\CAADrwDistanceDimCmd.obj: No such file or directory
+# make-ERROR: win_b64\code\lib\CAADrwCenterLine.lib
+## end   step: link1st   at 09/25/2024-16:41:47
+
+## start step: link2nd   at 09/25/2024-16:41:47
+# make: CAADraftingInterfaces\CAADrwCenterLine.m win_b64\code\bin\CAADrwCenterLine.dll
+# syst-ERROR: C:\CAA\Code\DimensionTest\.\CAADraftingInterfaces\CAADrwCenterLine.m\Objects\win_b64\CAADrwDistanceDimCmd.obj: No such file or directory
+# syst-ERROR: C:\CAA\Code\DimensionTest\.\win_b64\code\lib\CAADrwCenterLine.exp: No such file or directory
+# make-ERROR: win_b64\code\bin\CAADrwCenterLine.dll
+## end   step: link2nd   at 09/25/2024-16:41:47
+
+## start step: dummynls   at 09/25/2024-16:41:47
+## end   step: dummynls   at 09/25/2024-16:41:47

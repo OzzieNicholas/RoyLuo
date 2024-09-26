@@ -1,0 +1,64 @@
+mkmk  -u -g  CAADrwCenterLine.m
+2024/9/26 14:10:26
+
+## start step: CIbuild   at 09/26/2024-14:10:27
+## end   step: CIbuild   at 09/26/2024-14:10:27
+
+## start step: DataUpdate   at 09/26/2024-14:10:27
+# make:  CAADraftingInterfaces\IdentityCard\Objects\win_b64\.mkdata.mk
+## end   step: DataUpdate   at 09/26/2024-14:10:27
+
+## start step: DataUpdate   at 09/26/2024-14:10:27
+# make:  CAADraftingInterfaces\CAADrwCenterLine.m\Objects\win_b64\.mkdata.mk
+## end   step: DataUpdate   at 09/26/2024-14:10:27
+
+## start step: CIcompilation   at 09/26/2024-14:10:27
+## end   step: CIcompilation   at 09/26/2024-14:10:27
+
+## start step: headerlist   at 09/26/2024-14:10:27
+## end   step: headerlist   at 09/26/2024-14:10:27
+
+## start step: headermap   at 09/26/2024-14:10:27
+## end   step: headermap   at 09/26/2024-14:10:27
+
+## start step: fwgrammar   at 09/26/2024-14:10:27
+## end   step: fwgrammar   at 09/26/2024-14:10:27
+
+## start step: grammar1st   at 09/26/2024-14:10:27
+## end   step: grammar1st   at 09/26/2024-14:10:27
+
+## start step: headerlist   at 09/26/2024-14:10:27
+## end   step: headerlist   at 09/26/2024-14:10:27
+
+## start step: headermap   at 09/26/2024-14:10:27
+## end   step: headermap   at 09/26/2024-14:10:27
+
+## start step: grammar2nd   at 09/26/2024-14:10:27
+## end   step: grammar2nd   at 09/26/2024-14:10:27
+
+## start step: typelibgrammar   at 09/26/2024-14:10:27
+## end   step: typelibgrammar   at 09/26/2024-14:10:27
+
+## start step: headerlist   at 09/26/2024-14:10:27
+## end   step: headerlist   at 09/26/2024-14:10:27
+
+## start step: headermap   at 09/26/2024-14:10:27
+## end   step: headermap   at 09/26/2024-14:10:27
+
+## start step: headerruler   at 09/26/2024-14:10:27
+## end   step: headerruler   at 09/26/2024-14:10:27
+
+## start step: compilation   at 09/26/2024-14:10:27
+## end   step: compilation   at 09/26/2024-14:10:27
+
+## start step: sourceruler   at 09/26/2024-14:10:27
+## end   step: sourceruler   at 09/26/2024-14:10:27
+
+## start step: link1st   at 09/26/2024-14:10:27
+## end   step: link1st   at 09/26/2024-14:10:27
+
+## start step: link2nd   at 09/26/2024-14:10:27
+## end   step: link2nd   at 09/26/2024-14:10:27
+
+## start step: dummynls   at 09/26/2024-14:10:27
+## end   step: dummynls   at 09/26/2024-14:10:27

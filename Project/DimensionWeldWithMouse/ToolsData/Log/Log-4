@@ -1,0 +1,96 @@
+mkmk  -u -g  CAADrwCenterLine.m
+2024/8/20 11:46:15
+
+## start step: CIbuild   at 08/20/2024-11:46:17
+## end   step: CIbuild   at 08/20/2024-11:46:18
+
+## start step: DataUpdate   at 08/20/2024-11:46:18
+# make:  CAADraftingInterfaces\IdentityCard\Objects\win_b64\.mkdata.mk
+## end   step: DataUpdate   at 08/20/2024-11:46:20
+
+## start step: DataUpdate   at 08/20/2024-11:46:20
+# make:  CAADraftingInterfaces\CAADrwCenterLine.m\Objects\win_b64\.mkdata.mk
+## end   step: DataUpdate   at 08/20/2024-11:46:24
+
+## start step: CIcompilation   at 08/20/2024-11:46:24
+## end   step: CIcompilation   at 08/20/2024-11:46:24
+
+## start step: headerlist   at 08/20/2024-11:46:24
+## end   step: headerlist   at 08/20/2024-11:46:24
+
+## start step: headermap   at 08/20/2024-11:46:24
+## end   step: headermap   at 08/20/2024-11:46:25
+
+## start step: fwgrammar   at 08/20/2024-11:46:25
+## end   step: fwgrammar   at 08/20/2024-11:46:25
+
+## start step: grammar1st   at 08/20/2024-11:46:25
+## end   step: grammar1st   at 08/20/2024-11:46:25
+
+## start step: headerlist   at 08/20/2024-11:46:25
+## end   step: headerlist   at 08/20/2024-11:46:25
+
+## start step: headermap   at 08/20/2024-11:46:25
+## end   step: headermap   at 08/20/2024-11:46:25
+
+## start step: grammar2nd   at 08/20/2024-11:46:25
+## end   step: grammar2nd   at 08/20/2024-11:46:25
+
+## start step: typelibgrammar   at 08/20/2024-11:46:25
+## end   step: typelibgrammar   at 08/20/2024-11:46:25
+
+## start step: headerlist   at 08/20/2024-11:46:25
+## end   step: headerlist   at 08/20/2024-11:46:25
+
+## start step: headermap   at 08/20/2024-11:46:25
+## end   step: headermap   at 08/20/2024-11:46:25
+
+## start step: headerruler   at 08/20/2024-11:46:25
+## end   step: headerruler   at 08/20/2024-11:46:25
+
+## start step: compilation   at 08/20/2024-11:46:25
+# make:  CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp
+CAADrwDistanceDimCmd.cpp
+C:\CAA\Code\DimensionWeldWithMouse\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(156) : error C2065: “CATI2DArc_var”: 未声明的标识符
+C:\CAA\Code\DimensionWeldWithMouse\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(156) : error C2146: 语法错误 : 缺少“;”(在标识符“spArc”的前面)
+C:\CAA\Code\DimensionWeldWithMouse\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(156) : error C2065: “spArc”: 未声明的标识符
+C:\CAA\Code\DimensionWeldWithMouse\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(157) : error C2065: “IID_CATI2DArc”: 未声明的标识符
+C:\CAA\Code\DimensionWeldWithMouse\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(159) : error C2227: “->GetSupportCurve”的左边必须指向类/结构/联合/泛型类型
+        类型是“'unknown-type'”
+C:\CAA\Code\DimensionWeldWithMouse\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(164) : error C2065: “CATI2DCircle_var”: 未声明的标识符
+C:\CAA\Code\DimensionWeldWithMouse\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(164) : error C2146: 语法错误 : 缺少“;”(在标识符“spCircle”的前面)
+C:\CAA\Code\DimensionWeldWithMouse\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(164) : error C2065: “spCircle”: 未声明的标识符
+C:\CAA\Code\DimensionWeldWithMouse\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(165) : error C2065: “IID_CATI2DCircle”: 未声明的标识符
+C:\CAA\Code\DimensionWeldWithMouse\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(167) : error C2227: “->GetCircleData”的左边必须指向类/结构/联合/泛型类型
+        类型是“'unknown-type'”
+C:\CAA\Code\DimensionWeldWithMouse\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(172) : error C2065: “CATI2DConicCurve_var”: 未声明的标识符
+C:\CAA\Code\DimensionWeldWithMouse\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(172) : error C2146: 语法错误 : 缺少“;”(在标识符“spConicCurve”的前面)
+C:\CAA\Code\DimensionWeldWithMouse\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(172) : error C2065: “spConicCurve”: 未声明的标识符
+C:\CAA\Code\DimensionWeldWithMouse\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(173) : error C2065: “IID_CATI2DConicCurve”: 未声明的标识符
+C:\CAA\Code\DimensionWeldWithMouse\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(175) : error C2227: “->GetConicParm”的左边必须指向类/结构/联合/泛型类型
+        类型是“'unknown-type'”
+C:\CAA\Code\DimensionWeldWithMouse\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(180) : error C2065: “CATI2DConnectCurve_var”: 未声明的标识符
+C:\CAA\Code\DimensionWeldWithMouse\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(180) : error C2146: 语法错误 : 缺少“;”(在标识符“spConnectCurve”的前面)
+C:\CAA\Code\DimensionWeldWithMouse\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(180) : error C2065: “spConnectCurve”: 未声明的标识符
+C:\CAA\Code\DimensionWeldWithMouse\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(181) : error C2065: “IID_CATI2DConnectCurve”: 未声明的标识符
+# make-ERROR: CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp
+## end   step: compilation   at 08/20/2024-11:46:40
+
+## start step: sourceruler   at 08/20/2024-11:46:40
+## end   step: sourceruler   at 08/20/2024-11:46:40
+
+## start step: link1st   at 08/20/2024-11:46:40
+# make: CAADraftingInterfaces\CAADrwCenterLine.m win_b64\code\lib\CAADrwCenterLine.lib
+# syst-ERROR: C:\CAA\Code\DimensionWeldWithMouse\.\CAADraftingInterfaces\CAADrwCenterLine.m\Objects\win_b64\CAADrwDistanceDimCmd.obj: No such file or directory
+# make-ERROR: win_b64\code\lib\CAADrwCenterLine.lib
+## end   step: link1st   at 08/20/2024-11:46:40
+
+## start step: link2nd   at 08/20/2024-11:46:40
+# make: CAADraftingInterfaces\CAADrwCenterLine.m win_b64\code\bin\CAADrwCenterLine.dll
+# syst-ERROR: C:\CAA\Code\DimensionWeldWithMouse\.\CAADraftingInterfaces\CAADrwCenterLine.m\Objects\win_b64\CAADrwDistanceDimCmd.obj: No such file or directory
+# syst-ERROR: C:\CAA\Code\DimensionWeldWithMouse\.\win_b64\code\lib\CAADrwCenterLine.exp: No such file or directory
+# make-ERROR: win_b64\code\bin\CAADrwCenterLine.dll
+## end   step: link2nd   at 08/20/2024-11:46:40
+
+## start step: dummynls   at 08/20/2024-11:46:40
+## end   step: dummynls   at 08/20/2024-11:46:40

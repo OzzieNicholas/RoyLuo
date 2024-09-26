@@ -1,0 +1,82 @@
+mkmk  -u -g  CAADrwCenterLine.m
+2024/8/20 14:20:38
+
+## start step: CIbuild   at 08/20/2024-14:20:40
+## end   step: CIbuild   at 08/20/2024-14:20:40
+
+## start step: DataUpdate   at 08/20/2024-14:20:40
+# make:  CAADraftingInterfaces\IdentityCard\Objects\win_b64\.mkdata.mk
+## end   step: DataUpdate   at 08/20/2024-14:20:42
+
+## start step: DataUpdate   at 08/20/2024-14:20:42
+# make:  CAADraftingInterfaces\CAADrwCenterLine.m\Objects\win_b64\.mkdata.mk
+## end   step: DataUpdate   at 08/20/2024-14:20:46
+
+## start step: CIcompilation   at 08/20/2024-14:20:46
+## end   step: CIcompilation   at 08/20/2024-14:20:46
+
+## start step: headerlist   at 08/20/2024-14:20:46
+## end   step: headerlist   at 08/20/2024-14:20:46
+
+## start step: headermap   at 08/20/2024-14:20:46
+## end   step: headermap   at 08/20/2024-14:20:47
+
+## start step: fwgrammar   at 08/20/2024-14:20:47
+## end   step: fwgrammar   at 08/20/2024-14:20:47
+
+## start step: grammar1st   at 08/20/2024-14:20:47
+## end   step: grammar1st   at 08/20/2024-14:20:47
+
+## start step: headerlist   at 08/20/2024-14:20:47
+## end   step: headerlist   at 08/20/2024-14:20:47
+
+## start step: headermap   at 08/20/2024-14:20:47
+## end   step: headermap   at 08/20/2024-14:20:47
+
+## start step: grammar2nd   at 08/20/2024-14:20:47
+## end   step: grammar2nd   at 08/20/2024-14:20:47
+
+## start step: typelibgrammar   at 08/20/2024-14:20:47
+## end   step: typelibgrammar   at 08/20/2024-14:20:47
+
+## start step: headerlist   at 08/20/2024-14:20:47
+## end   step: headerlist   at 08/20/2024-14:20:47
+
+## start step: headermap   at 08/20/2024-14:20:47
+## end   step: headermap   at 08/20/2024-14:20:47
+
+## start step: headerruler   at 08/20/2024-14:20:47
+## end   step: headerruler   at 08/20/2024-14:20:47
+
+## start step: compilation   at 08/20/2024-14:20:47
+# make:  CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp
+CAADrwDistanceDimCmd.cpp
+C:\CAA\Code\DimensionWeldWithMouse\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(1) : error C2653: “CAADrwDistanceDimCmd”: 不是类或命名空间名称
+C:\CAA\Code\DimensionWeldWithMouse\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(2) : error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+C:\CAA\Code\DimensionWeldWithMouse\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(2) : error C2550: “CAADrwDistanceDimCmd”: 构造函数初始值设定项列表只能在构造函数定义中使用
+C:\CAA\Code\DimensionWeldWithMouse\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(3) : error C2065: “CATCommandMsgRequestExclusiveMode”: 未声明的标识符
+C:\CAA\Code\DimensionWeldWithMouse\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(3) : error C3861: “RequestStatusChange”: 找不到标识符
+C:\CAA\Code\DimensionWeldWithMouse\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(4) : error C4508: “CAADrwDistanceDimCmd”: 函数应返回一个值；假定“void”返回类型
+C:\CAA\Code\DimensionWeldWithMouse\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(6) : error C2653: “CAADrwDistanceDimCmd”: 不是类或命名空间名称
+C:\CAA\Code\DimensionWeldWithMouse\CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp(6) : fatal error C1903: 无法从以前的错误中恢复；正在停止编译
+# make-ERROR: CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp
+## end   step: compilation   at 08/20/2024-14:20:50
+
+## start step: sourceruler   at 08/20/2024-14:20:50
+## end   step: sourceruler   at 08/20/2024-14:20:50
+
+## start step: link1st   at 08/20/2024-14:20:50
+# make: CAADraftingInterfaces\CAADrwCenterLine.m win_b64\code\lib\CAADrwCenterLine.lib
+# syst-ERROR: C:\CAA\Code\DimensionWeldWithMouse\.\CAADraftingInterfaces\CAADrwCenterLine.m\Objects\win_b64\CAADrwDistanceDimCmd.obj: No such file or directory
+# make-ERROR: win_b64\code\lib\CAADrwCenterLine.lib
+## end   step: link1st   at 08/20/2024-14:20:51
+
+## start step: link2nd   at 08/20/2024-14:20:51
+# make: CAADraftingInterfaces\CAADrwCenterLine.m win_b64\code\bin\CAADrwCenterLine.dll
+# syst-ERROR: C:\CAA\Code\DimensionWeldWithMouse\.\CAADraftingInterfaces\CAADrwCenterLine.m\Objects\win_b64\CAADrwDistanceDimCmd.obj: No such file or directory
+# syst-ERROR: C:\CAA\Code\DimensionWeldWithMouse\.\win_b64\code\lib\CAADrwCenterLine.exp: No such file or directory
+# make-ERROR: win_b64\code\bin\CAADrwCenterLine.dll
+## end   step: link2nd   at 08/20/2024-14:20:51
+
+## start step: dummynls   at 08/20/2024-14:20:51
+## end   step: dummynls   at 08/20/2024-14:20:51

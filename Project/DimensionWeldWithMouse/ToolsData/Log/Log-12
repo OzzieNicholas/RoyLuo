@@ -1,0 +1,70 @@
+mkmk  -u -g  CAADrwCenterLine.m
+2024/8/20 15:36:11
+
+## start step: CIbuild   at 08/20/2024-15:36:11
+## end   step: CIbuild   at 08/20/2024-15:36:11
+
+## start step: DataUpdate   at 08/20/2024-15:36:11
+# make:  CAADraftingInterfaces\IdentityCard\Objects\win_b64\.mkdata.mk
+## end   step: DataUpdate   at 08/20/2024-15:36:11
+
+## start step: DataUpdate   at 08/20/2024-15:36:11
+# make:  CAADraftingInterfaces\CAADrwCenterLine.m\Objects\win_b64\.mkdata.mk
+## end   step: DataUpdate   at 08/20/2024-15:36:12
+
+## start step: CIcompilation   at 08/20/2024-15:36:12
+## end   step: CIcompilation   at 08/20/2024-15:36:12
+
+## start step: headerlist   at 08/20/2024-15:36:12
+## end   step: headerlist   at 08/20/2024-15:36:12
+
+## start step: headermap   at 08/20/2024-15:36:12
+## end   step: headermap   at 08/20/2024-15:36:12
+
+## start step: fwgrammar   at 08/20/2024-15:36:12
+## end   step: fwgrammar   at 08/20/2024-15:36:12
+
+## start step: grammar1st   at 08/20/2024-15:36:12
+## end   step: grammar1st   at 08/20/2024-15:36:12
+
+## start step: headerlist   at 08/20/2024-15:36:12
+## end   step: headerlist   at 08/20/2024-15:36:12
+
+## start step: headermap   at 08/20/2024-15:36:12
+## end   step: headermap   at 08/20/2024-15:36:12
+
+## start step: grammar2nd   at 08/20/2024-15:36:12
+## end   step: grammar2nd   at 08/20/2024-15:36:12
+
+## start step: typelibgrammar   at 08/20/2024-15:36:12
+## end   step: typelibgrammar   at 08/20/2024-15:36:12
+
+## start step: headerlist   at 08/20/2024-15:36:12
+## end   step: headerlist   at 08/20/2024-15:36:12
+
+## start step: headermap   at 08/20/2024-15:36:12
+## end   step: headermap   at 08/20/2024-15:36:12
+
+## start step: headerruler   at 08/20/2024-15:36:12
+## end   step: headerruler   at 08/20/2024-15:36:12
+
+## start step: compilation   at 08/20/2024-15:36:12
+# make:  CAADraftingInterfaces\CAADrwCenterLine.m\src\CAADrwDistanceDimCmd.cpp
+CAADrwDistanceDimCmd.cpp
+## end   step: compilation   at 08/20/2024-15:36:16
+
+## start step: sourceruler   at 08/20/2024-15:36:16
+## end   step: sourceruler   at 08/20/2024-15:36:16
+
+## start step: link1st   at 08/20/2024-15:36:16
+# make: CAADraftingInterfaces\CAADrwCenterLine.m win_b64\code\lib\CAADrwCenterLine.lib
+   正在创建库 C:\CAA\Code\DimensionWeldWithMouse\.\win_b64\code\lib\CAADrwCenterLine.lib 和对象 C:\CAA\Code\DimensionWeldWithMouse\.\win_b64\code\lib\CAADrwCenterLine.exp
+## end   step: link1st   at 08/20/2024-15:36:16
+
+## start step: link2nd   at 08/20/2024-15:36:16
+# make: CAADraftingInterfaces\CAADrwCenterLine.m win_b64\code\bin\CAADrwCenterLine.dll
+SystemUUID.lib(CATIUnknownList.obj) : warning LNK4099: 未找到 PDB“vc80.pdb”(使用“C:\CATIA\DassaultSystemes\B19\.\win_b64\code\lib\SystemUUID.lib”或在“C:\CAA\Code\DimensionWeldWithMouse\win_b64\code\bin\vc80.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+## end   step: link2nd   at 08/20/2024-15:36:16
+
+## start step: dummynls   at 08/20/2024-15:36:16
+## end   step: dummynls   at 08/20/2024-15:36:16

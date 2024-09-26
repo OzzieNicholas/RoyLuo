@@ -1,0 +1,6 @@
+CAADrwHeader.CenterLine.ShortHelp = "[~CAADrwHeader,CAADrwHeader.CenterLine.ShortHelp~ ±ê×¢¾àÀ/]";
+CAADrwHeader.CenterLine.Title = "[~CAADrwHeader,CAADrwHeader.CenterLine.Title~ ±ê×¢¾àÀ/]";
+CAADrwHeader.DistanceDim.Title = "[~CAADrwHeader,CAADrwHeader.DistanceDim.Title~ ×Ô¶¯±ê×¢¾àÀ/]";
+CAADrwHeader.DistanceDim.Help = "[~CAADrwHeader,CAADrwHeader.DistanceDim.Help~ ×Ô¶¯±ê×¢¾àÀ/]";
+CAADrwHeader.DistanceDim.ShortHelp = "[~CAADrwHeader,CAADrwHeader.DistanceDim.ShortHelp~ ×Ô¶¯±ê×¢¾àÀ/]";
+CAADrwHeader.CenterLine.Help = "[~CAADrwHeader,CAADrwHeader.CenterLine.Help~ ±ê×¢¾àÀ/]";

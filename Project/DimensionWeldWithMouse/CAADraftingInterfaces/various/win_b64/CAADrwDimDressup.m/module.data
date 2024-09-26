@@ -1,0 +1,5 @@
+!<mkRTViewData> v1.0.0
+INT/000/CUS .\win_b64\code\lib\CAADrwDimDressup.exp|.\CAADraftingInterfaces\CAADrwDimDressup.m
+INT/000/CUS .\win_b64\code\bin\CAADrwDimDressup.pdb|.\CAADraftingInterfaces\CAADrwDimDressup.m
+BTV/000/CUS .\win_b64\code\lib\CAADrwDimDressup.lib|.\CAADraftingInterfaces\CAADrwDimDressup.m
+RTV/001/CUS .\win_b64\code\bin\CAADrwDimDressup.dll|.\CAADraftingInterfaces\CAADrwDimDressup.m

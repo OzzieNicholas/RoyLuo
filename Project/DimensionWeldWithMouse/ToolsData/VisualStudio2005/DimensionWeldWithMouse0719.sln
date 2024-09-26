@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CAADraftingInterfaces", "CAADraftingInterfaces.vcproj", "{8A04E573-D573-4EB9-AAE3-E07A51348E7F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CAADrwAddin.m", "CAADraftingInterfaces\CAADrwAddin.m.vcproj", "{C40A90A6-CA8F-4497-B8A3-C640B0CCBE62}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CAADrwCenterLine.m", "CAADraftingInterfaces\CAADrwCenterLine.m.vcproj", "{587B8943-2053-45AA-A602-33992412E770}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A04E573-D573-4EB9-AAE3-E07A51348E7F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8A04E573-D573-4EB9-AAE3-E07A51348E7F}.Release|Win32.ActiveCfg = Release|Win32
+		{C40A90A6-CA8F-4497-B8A3-C640B0CCBE62}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C40A90A6-CA8F-4497-B8A3-C640B0CCBE62}.Release|Win32.ActiveCfg = Release|Win32
+		{587B8943-2053-45AA-A602-33992412E770}.Debug|Win32.ActiveCfg = Debug|Win32
+		{587B8943-2053-45AA-A602-33992412E770}.Release|Win32.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

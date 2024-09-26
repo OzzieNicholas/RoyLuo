@@ -1,0 +1,5 @@
+!<mkRTViewData> v1.0.0
+BTV/000/CUS .\win_b64\code\lib\CAADrwAddin.lib|.\CAADraftingInterfaces\CAADrwAddin.m
+INT/000/CUS .\win_b64\code\bin\CAADrwAddin.pdb|.\CAADraftingInterfaces\CAADrwAddin.m
+RTV/001/CUS .\win_b64\code\bin\CAADrwAddin.dll|.\CAADraftingInterfaces\CAADrwAddin.m
+INT/000/CUS .\win_b64\code\lib\CAADrwAddin.exp|.\CAADraftingInterfaces\CAADrwAddin.m

@@ -1,0 +1,5 @@
+/I"D:\OzzieNicholas\Temporary\DimensionCircleLineWithMouse0722\.\CAADraftingInterfaces\CAADrwAddin.m\src"
+/I"D:\OzzieNicholas\Temporary\DimensionCircleLineWithMouse0722\.\CAADraftingInterfaces\CAADrwAddin.m\LocalInterfaces"
+/I"D:\OzzieNicholas\Temporary\DimensionCircleLineWithMouse0722\.\CAADraftingInterfaces\CAADrwAddin.m\LocalGenerated\win_b64"
+/I"D:\OzzieNicholas\Temporary\DimensionCircleLineWithMouse0722\.\CAADraftingInterfaces\ProtectedInterfaces"
+/I"D:\OzzieNicholas\Temporary\DimensionCircleLineWithMouse0722\.\CAADraftingInterfaces\ImportedInterfaces\win_b64"

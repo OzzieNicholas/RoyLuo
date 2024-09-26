@@ -1,0 +1,5 @@
+/I"C:\CAA\Code\DimensionTest\.\CAADraftingInterfaces\CAADrwCenterLine.m\src"
+/I"C:\CAA\Code\DimensionTest\.\CAADraftingInterfaces\CAADrwCenterLine.m\LocalInterfaces"
+/I"C:\CAA\Code\DimensionTest\.\CAADraftingInterfaces\CAADrwCenterLine.m\LocalGenerated\win_b64"
+/I"C:\CAA\Code\DimensionTest\.\CAADraftingInterfaces\ProtectedInterfaces"
+/I"C:\CAA\Code\DimensionTest\.\CAADraftingInterfaces\ImportedInterfaces\win_b64"
