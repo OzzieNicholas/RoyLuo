@@ -144,12 +144,6 @@
 请你先记住上述内容，我们会挨个讨论
 ```
 
-
-
-![image-20240929161041931](C:/Users/yi.luo.EDRAWING/AppData/Roaming/Typora/typora-user-images/image-20240929161041931.png)
-
-![image-20240929161029487](C:/Users/yi.luo.EDRAWING/AppData/Roaming/Typora/typora-user-images/image-20240929161029487.png)
-
 ```
 3.1的部分我已经写完了，内容如下：
 
