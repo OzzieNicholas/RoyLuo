@@ -1,0 +1,97 @@
+### 4.1 多平台竞争下的定价策略博弈分析
+
+#### 4.1.2 静态博弈分析：Nash均衡
+
+在多平台竞争环境中，平台为了争夺多归属用户，需要通过精细调整定价策略来实现其利润最大化。Nash均衡作为博弈论中的核心概念之一，能够帮助我们理解这种静态竞争格局下的均衡状态，即在所有参与者都选择最优策略的情况下，任何一方都无法通过单方面改变策略来进一步提高自身的收益。
+
+在本节中，我们将详细推导和分析多平台竞争下的Nash均衡，并探索各平台在均衡条件下的定价策略选择。为了更加严谨地推导，我们将从平台的利润函数出发，并结合之前得到的需求和供给模型，逐步解析均衡状态下的决策过程。
+
+#### 数学模型与利润函数的构建
+
+根据第3.2部分的模型设定，我们定义平台 \$i\$ 的利润函数为：
+\$$
+\Pi_i$p_i, p_j$ = p_i \cdot n^d_i$p_i, p_j$ - W_i$p_i$ \cdot N^s_i$p_i, p_j$
+\$$
+其中：
+- \$n^d_i$p_i, p_j$\$ 是平台 \$i\$ 的需求函数，引用自4.1.1部分。它表示用户在多归属行为下根据平台定价和竞争平台定价之间的动态选择。
+- \$W_i$p_i$\$ 是平台 \$i\$ 提供给配送员的报酬，假设与定价成正比，即 \$W_i$p_i$ = \gamma_i p_i\$。
+- \$N^s_i$p_i, p_j$\$ 是供给函数，表示愿意为平台提供服务的配送员数量。
+
+在这个模型中，我们的目标是通过求解利润函数的最大值条件，推导出平台 \$i\$ 在给定竞争对手策略 \$p_j\$ 的情况下，如何选择其最优定价策略 \$p_i\$。
+
+#### Nash均衡的定义与理论基础
+
+Nash均衡是一种策略组合，使得每个参与者在其他玩家策略给定的情况下都无法通过单方面改变策略来提升自身的收益。对于两平台系统而言，平台 \$i\$ 和平台 \$j\$ 的定价策略 \$p_i^*\$ 和 \$p_j^*\$ 需满足：
+\$$
+\frac{\partial \Pi_i$p_i^*, p_j^*$}{\partial p_i} = 0 \quad \text{且} \quad \frac{\partial \Pi_j$p_j^*, p_i^*$}{\partial p_j} = 0
+\$$
+这意味着每个平台都在其最佳策略上处于最优状态，即在均衡点时，任何一方都没有动力单方面改变其定价。
+
+#### 对平台 \$i\$ 的最优定价策略推导
+
+为了得到平台 \$i\$ 的最优定价策略，我们将对其利润函数进行数学推导。首先，对平台 \$i\$ 的利润函数 \$\Pi_i$p_i, p_j$\$ 关于其自身定价 \$p_i\$ 进行偏导：
+\$$
+\frac{\partial \Pi_i$p_i, p_j$}{\partial p_i} = \frac{\partial}{\partial p_i} \left$ p_i \cdot n^d_i$p_i, p_j$ - \gamma_i p_i \cdot N^s_i$p_i, p_j$ \right$
+\$$
+
+应用乘积法则，对两个项分别求导：
+\$$
+\frac{\partial}{\partial p_i} \left$ p_i \cdot n^d_i$p_i, p_j$ \right$ = n^d_i$p_i, p_j$ + p_i \cdot \frac{\partial n^d_i$p_i, p_j$}{\partial p_i}
+\$$
+\$$
+\frac{\partial}{\partial p_i} \left$ \gamma_i p_i \cdot N^s_i$p_i, p_j$ \right$ = \gamma_i \cdot N^s_i$p_i, p_j$ + \gamma_i p_i \cdot \frac{\partial N^s_i$p_i, p_j$}{\partial p_i}
+\$$
+
+将这些结果代入整体导数公式中：
+\$$
+\frac{\partial \Pi_i$p_i, p_j$}{\partial p_i} = n^d_i$p_i, p_j$ + p_i \cdot \frac{\partial n^d_i$p_i, p_j$}{\partial p_i} - \gamma_i \cdot N^s_i$p_i, p_j$ - \gamma_i p_i \cdot \frac{\partial N^s_i$p_i, p_j$}{\partial p_i}
+\$$
+
+#### 需求函数和供给函数对定价影响的深入分析
+
+##### 需求函数对价格变化的边际效应
+
+根据4.1.1部分的推导，需求函数 \$n^d_i$p_i, p_j$\$ 对定价 \$p_i\$ 的导数为：
+\$$
+\frac{\partial n^d_i$p_i, p_j$}{\partial p_i} = a e^{-a t} \cdot \frac{b $1 + \alpha p_i$ - b p_i \alpha}{$1 + \alpha p_i$^2}
+\$$
+
+1. 当价格较低时，分母 \$$1 + \alpha p_i$^2\$ 的值较大，整体导数趋于较小值，这意味着需求对价格变化不敏感。这表明平台可以在一定范围内提高价格而不会大幅度损失需求。
+   
+2. 当价格逐渐增加时，随着分子项 \$$b $1 + \alpha p_i$ - b p_i \alpha$\$ 逐渐趋向于零，导数值迅速上升，这表明需求对价格变得高度敏感。此时，进一步提高价格将显著减少用户的需求量。
+
+##### 供给函数对价格变化的边际效应
+
+同样地，根据第3.2部分中供给函数的定义：
+\$$
+N^s_i$p_i, p_j$ = \epsilon \cdot \frac{W_i$p_i$}{1 + \lambda W_i$p_i$} + \beta \cdot \frac{n^d_i$p_i, p_j$}{1 + \mu n^d_i$p_i, p_j$}
+\$$
+由于 \$W_i$p_i$ = \gamma_i p_i\$，可以进一步对供给函数求导，分析其对定价 \$p_i\$ 的敏感性。
+
+计算第一项对 \$p_i\$ 的导数：
+\$$
+\frac{\partial}{\partial p_i} \left$ \frac{\gamma_i p_i}{1 + \lambda \gamma_i p_i} \right$ = \frac{\gamma_i $1 + \lambda \gamma_i p_i$ - \gamma_i^2 p_i \lambda}{$1 + \lambda \gamma_i p_i$^2}
+\$$
+
+对于第二项，由于它依赖于需求函数，我们也需使用链式求导法则：
+\$$
+\frac{\partial}{\partial p_i} \left$ \frac{n^d_i$p_i, p_j$}{1 + \mu n^d_i$p_i, p_j$} \right$ = \frac{\frac{\partial n^d_i$p_i, p_j$}{\partial p_i} $1 + \mu n^d_i$p_i, p_j$$ - \mu n^d_i$p_i, p_j$ \cdot \frac{\partial n^d_i$p_i, p_j$}{\partial p_i}}{$1 + \mu n^d_i$p_i, p_j$$^2}
+\$$
+
+这些表达式揭示了供给量对价格变化的非线性反应，当价格达到一定水平时，供给量对价格的敏感性会逐渐减弱，这种特性在平台制定薪酬策略时起到了关键作用。
+
+#### Nash均衡条件的总结与经济意义
+
+在最终的均衡状态下，我们得到了如下条件：
+\$$
+n^d_i$p_i^*, p_j$ + p_i^* \cdot \frac{\partial n^d_i$p_i^*, p_j$}{\partial p_i} = \gamma_i \cdot N^s_i$p_i^*, p_j$ + \gamma_i p_i^* \cdot \frac{\partial N^s_i$p_i^*, p_j$}{\partial p_i}
+\$$
+
+这个条件在博弈均衡点上具有以下几层含义：
+1. 边际收益与边际成本平衡：在均衡点上，平台 \$i\$ 的边际收益等于其边际成本。这意味着在当前策略组合下，任何单方面改变价格都不会导致利润提升。
+2. 互依性与市场动态：平台间的价格决策是相互依赖的，即每个平台在制定自身策略时必须考虑竞争对手的定价行为。这种相互依赖在多归属用户市场中尤为显著，因为用户会依据效用最大化原则在多个平台间切换。
+3. 多归属用户的动态选择行为：多归属用户在均衡状态下的选择行为影响了市场竞争的格局，平台需要在吸引用户的同时保持价格策略的稳定性，以避免因过高的定价而导致用户的大量流失。
+
+#### 铺垫与后续分析
+
+通过对Nash均衡的深入推导和分析，我们明确了多平台竞争环境下的静态博弈特征。这一部分的结论为我们在接下来的章节中分析动态博弈（如Stackelberg博弈）奠定了坚实的理论基础。在第4.1.3节中，我们将探索平台在成为市场领导者或追随者时的策略选择，并引入Stackelberg博弈模型来分析市场中的策略互动。
