@@ -1,127 +1,42 @@
-### 4.3.3 最优定价策略的求解
-
-为了使平台 \( i \) 的利润 \(\Pi_i(p_i, p_j, t)\) 最大化，我们的目标是找到最优的定价策略 \(p_i^*\)，即能够使利润最大化的定价策略。这需要对利润函数进行求导，并找到使得一阶导数为零的点 \(p_i^*\)。在这一节中，我们将详细展示这一求解过程，包括所有的数学推导、逐步计算，以及每一个步骤的细致解释。
-
-#### 利润函数回顾
-
-首先，我们回顾平台 \( i \) 的利润函数 \(\Pi_i(p_i, p_j, t)\)，以便明确我们的求解目标。平台的利润函数定义为：
+消费者在选择平台时，通常基于效用最大化原则，并在多个平台的定价和服务质量之间动态调整选择策略。为了描述这种选择行为，我们首先提出基本的需求函数：
 
 $$
-\Pi_i(p_i, p_j, t) = p_i \cdot n^d_i(p_i, p_j, t) - W_i(p_i) \cdot N^s_i(p_i, p_j, t) - C_i(n^d_i, N^s_i)
+n^d_i(p_i, p_j) = f(p_i) + g(p_j)
 $$
 
 其中：
-- **收入项** \( p_i \cdot n^d_i(p_i, p_j, t) \) 表示平台从用户需求中获得的收入。
-- **成本项** \( W_i(p_i) \cdot N^s_i(p_i, p_j, t) \) 表示支付给配送员的报酬。
-- **固定成本** \( C_i(n^d_i, N^s_i) \) 表示平台运营的其他固定开销，与需求和供给量相关。
+- \(f(p_i)\) 描述了消费者对平台 \(i\) 定价的响应；
+- \(g(p_j)\) 则反映了竞争平台 \(j\) 定价对平台 \(i\) 的干扰效应。
 
-为了更好地理解每一个项的影响，我们需要详细推导需求函数和供给函数的表达式：
-
-- \( n^d_i(p_i, p_j, t) \) 是平台 \( i \) 的需求函数：
-  $$
-  n^d_i(p_i, p_j, t) = a e^{-a t} \left( 1 - \frac{b p_i}{1 + \alpha p_i} \right) + k \frac{p_j}{1 + \alpha p_j}
-  $$
-  - 这里的每一项都代表了用户对于不同价格下的平台选择行为。
-
-- \( N^s_i(p_i, p_j, t) \) 是供给函数，描述了配送员的供给响应：
-  $$
-  N^s_i(p_i, p_j, t) = \epsilon \cdot \frac{W_i(p_i)}{1 + \lambda W_i(p_i)} + \beta \cdot \frac{n^d_i(p_i, p_j, t)}{1 + \mu n^d_i(p_i, p_j, t)}
-  $$
-  - 供给函数反映了配送员对平台报酬和市场需求的反应。
-
-- \( W_i(p_i) \) 是平台支付给配送员的报酬，假设它与定价成正比：
-  $$
-  W_i(p_i) = \gamma_i p_i
-  $$
-  - 这一假设使得供给函数与定价策略直接相关，并增加了模型的可解释性。
-
-#### 利润函数的求导
-
-为了找到最优定价策略 \( p_i^* \)，我们需要对利润函数 \(\Pi_i(p_i, p_j, t)\) 对 \( p_i \) 进行一阶导数求解，并分析其变化行为：
+在这个基础上，我们进一步考虑价格的非线性影响，以更贴近实际消费行为。例如，当价格较低时，需求对价格的敏感度较低；但当价格超过某一临界点后，需求会迅速下降。为此，我们采用如下非线性函数形式来描述消费者对价格变化的响应：
 
 $$
-\frac{\partial \Pi_i(p_i, p_j, t)}{\partial p_i} = \frac{\partial}{\partial p_i} \left[ p_i \cdot n^d_i(p_i, p_j, t) - W_i(p_i) \cdot N^s_i(p_i, p_j, t) - C_i(n^d_i, N^s_i) \right]
+f(p_i) = a \left( 1 - \frac{b p_i}{1 + \alpha p_i} \right)
 $$
 
-在推导过程中，我们将把问题分解为两个主要部分：**收入项的求导**和**成本项的求导**。
+这里，\(a\) 表示平台 \(i\) 的初始需求规模；\(b\) 表示消费者对平台 \(i\) 价格的敏感度；\(\alpha\) 控制价格对需求的非线性影响程度。随着价格 \(p_i\) 上升，\(\frac{b p_i}{1 + \alpha p_i}\) 的值增加，导致需求 \(f(p_i)\) 逐渐减少。
 
-##### 收入项的求导
+此外，为了反映竞争平台 \(j\) 的价格 \(p_j\) 对平台 \(i\) 的需求的溢出效应，我们引入干扰项：
 
-收入项表达式为：
 $$
-p_i \cdot n^d_i(p_i, p_j, t) = p_i \cdot \left[ a e^{-a t} \left( 1 - \frac{b p_i}{1 + \alpha p_i} \right) + k \cdot \frac{p_j}{1 + \alpha p_j} \right]
-$$
-
-**步骤 1**：首先使用乘积法则进行求导：
-$$
-\frac{\partial}{\partial p_i} \left[ p_i \cdot n^d_i(p_i, p_j, t) \right] = n^d_i(p_i, p_j, t) + p_i \cdot \frac{\partial n^d_i(p_i, p_j, t)}{\partial p_i}
+g(p_j) = k \cdot \frac{p_j}{1 + \alpha p_j}
 $$
 
-为了进一步求导，我们需要对需求函数 \(n^d_i(p_i, p_j, t)\) 进行分步求导。
+其中，\(k\) 是竞争平台价格对平台需求的影响系数。当竞争平台的价格上升时，消费者更倾向于转向平台 \(i\)，导致需求增加。
 
-**步骤 2**：对需求函数的非线性部分求导：
-- 首先，我们对函数中的第一部分进行推导：
-  $$
-  \frac{\partial}{\partial p_i} \left( a e^{-a t} \left( 1 - \frac{b p_i}{1 + \alpha p_i} \right) \right) = a e^{-a t} \cdot \left( -\frac{b (1 + \alpha p_i) - b p_i \alpha}{(1 + \alpha p_i)^2} \right)
-  $$
-- 使用链式法则与商法则，精确处理了非线性部分的推导。
+为了进一步反映需求的时间变化特性，我们引入指数衰减项 \(e^{-a t}\)，模拟由于市场动态竞争导致的需求逐渐减少。最终，我们得到如下形式的需求函数：
 
-**步骤 3**：整合推导结果，将所有项合并：
 $$
-\frac{\partial}{\partial p_i} \left[ p_i \cdot n^d_i(p_i, p_j, t) \right] = a e^{-a t} \left( 1 - \frac{b p_i}{1 + \alpha p_i} \right) + p_i \cdot a e^{-a t} \cdot \frac{b (1 + \alpha p_i) - b p_i \alpha}{(1 + \alpha p_i)^2} + k \cdot \frac{p_j}{1 + \alpha p_j}
+n^d_i(p_i, p_j, t) = a e^{-a t} \cdot \left( 1 - \frac{b p_i(t)}{1 + \alpha p_i(t)} \right) + k \cdot \frac{p_j(t)}{1 + \alpha p_j(t)}
+\tag{3-1}
 $$
 
-##### 成本项的求导
+该公式中的各项解释如下：
+- \(n^d_i(p_i, p_j, t)\)：平台 \(i\) 在时刻 \(t\) 的需求量，受到平台自身价格 \(p_i(t)\) 和竞争平台价格 \(p_j(t)\) 的影响。
+- \(a\)：平台 \(i\) 的初始需求规模，即在无竞争情况下的潜在市场份额。
+- \(b\)：消费者对平台 \(i\) 价格的敏感度，\(b\) 越大，表明消费者对价格变动更敏感。
+- \(k\)：竞争平台价格对本平台需求的影响程度，\(k\) 越大，竞争对手价格的变动对平台需求的干扰效应越强。
+- \(\alpha\)：价格弹性参数，控制价格对需求的非线性影响。
+- \(e^{-a t}\)：指数衰减项，模拟初始需求随时间逐渐减少的现象，反映了市场竞争的动态变化。
 
-成本项的表达式为：
-$$
-W_i(p_i) \cdot N^s_i(p_i, p_j, t) = \gamma_i p_i \cdot \left( \epsilon \cdot \frac{\gamma_i p_i}{1 + \lambda \gamma_i p_i} + \beta \cdot \frac{n^d_i(p_i, p_j, t)}{1 + \mu n^d_i(p_i, p_j, t)} \right)
-$$
-
-**步骤 1**：我们使用商法则对每一项分别求导。对于第一项：
-$$
-\frac{\partial}{\partial p_i} \left( \gamma_i p_i \cdot \frac{\gamma_i p_i}{1 + \lambda \gamma_i p_i} \right) = \gamma_i^2 \cdot \frac{1 + \lambda \gamma_i p_i - \lambda \gamma_i p_i}{(1 + \lambda \gamma_i p_i)^2}
-$$
-- 化简结果为：
-  $$
-  \gamma_i^2 \cdot \frac{1}{(1 + \lambda \gamma_i p_i)^2}
-  $$
-
-**步骤 2**：对于第二项，我们需要计算需求函数的导数，并利用嵌套链式法则：
-$$
-\frac{\partial}{\partial p_i} \left( \frac{n^d_i(p_i, p_j, t)}{1 + \mu n^d_i(p_i, p_j, t)} \right) = \frac{\frac{\partial n^d_i(p_i, p_j, t)}{\partial p_i} (1 + \mu n^d_i(p_i, p_j, t)) - \mu n^d_i(p_i, p_j, t) \cdot \frac{\partial n^d_i(p_i, p_j, t)}{\partial p_i}}{(1 + \mu n^d_i(p_i, p_j, t))^2}
-$$
-
-**步骤 3**：综合所有部分，得到成本项的完整求导结果：
-$$
-\frac{\partial}{\partial p_i} \left( W_i(p_i) \cdot N^s_i(p_i, p_j, t) \right) = \epsilon \gamma_i^2 \cdot \frac{(1 + 2 \lambda \gamma_i p_i)}{(1 + \lambda \gamma_i p_i)^2} + \beta \cdot \frac{\gamma_i p_i \cdot \frac{\partial n^d_i(p_i, p_j, t)}{\partial p_i} (1 + \mu n^d_i(p_i, p_j, t)) - \mu n^d_i(p_i, p_j, t) \cdot \frac{\partial n^d_i(p_i, p_j, t)}{\partial p_i}}{(1 + \mu n^d_i(p_i, p_j, t))^2}
-$$
-
-#### 最优定价条件
-
-将导数结果代入到最优条件公式，并设其等于零，我们得到以下优化方程：
-$$
-a e^{-a t} \left[ \left( 1 - \frac{b p_i}{1 + \alpha p_i} \right) + p_i \cdot \frac{b (1 + \alpha p_i) - b p_i \alpha}{(1 + \alpha p_i)^2} \right] + k \cdot \frac{p_j}{1 + \alpha p_j}
-$$
-$$
-- \epsilon \gamma_i^2 \cdot \frac{(1 + 2 \lambda \gamma_i p_i)}{(1 + \lambda \gamma_i p_i)^2} - \beta \cdot \frac{\gamma_i p_i \cdot \frac{\partial n^d_i(p_i, p_j, t)}{\partial p_i} (1 + \mu n^d_i(p_i, p_j, t)) - \mu n^d_i(p_i, p_j, t) \cdot \frac{\partial n^d_i(p_i, p_j, t)}{\partial p_i}}{(1 + \mu n^d_i(p_i, p_j, t))^2} = 0
-$$
-
-#### 使用数值方法求解最优定价
-
-由于上述方程复杂且包含非线性项，我们采用 **牛顿迭代法** 逼近最优解。
-
-**步骤 1**：选择初始值 \(p_i^{(0)}\)，此值可从历史数据或当前价格中获得。
-
-**步骤 2**：计算一阶导数 \(f(p_i^{(n)})\) 和二阶导数 \(f'(p_i^{(n)})\)，以提高精度。
-
-**步骤 3**：使用牛顿公式更新定价：
-$$
-p_i^{(n+1)} = p_i^{(n)} - \frac{f(p_i^{(n)})}{f'(p_i^{(n)})}
-$$
-
-**步骤 4**：检查收敛条件，若满足 \( |p_i^{(n+1)} - p_i^{(n)}| < \epsilon \)，则停止迭代。
-
-**步骤 5**：输出最终最优定价 \(p_i^*\)。
-
-通过这些详尽步骤，我们确保找到了使平台利润最大化的定价策略，从而增强了平台在多归属用户市场中的竞争力。
+这个模型不仅捕捉了平台自身定价对需求的直接影响，还能够反映竞争平台价格变化对需求的间接影响，揭示了消费者在多个平台之间进行迁移的动态行为。
